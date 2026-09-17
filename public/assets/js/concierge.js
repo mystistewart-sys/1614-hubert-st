@@ -1,5 +1,5 @@
 /* =========================================================================
-   Property Concierge — 5710 McCommas Blvd #101
+   Property Concierge — 1614 Hubert Street
    Talks to /.netlify/functions/concierge. The API key never reaches
    the browser. Answers are constrained to this property's verified records.
    ========================================================================= */
@@ -19,8 +19,8 @@
   var greeted = false;
 
   var GREETING =
-    'Hello — I can answer questions about 5710 McCommas Blvd #101. Ask me about the ' +
-    'HOA, the taxes, the layout, parking or the schools. For anything I cannot ' +
+    'Hello — I can answer questions about 1614 Hubert Street. Ask me about the ' +
+    'taxes, the renovation, the solar, parking or the schools. For anything I cannot ' +
     "confirm, I'll point you to Mysti.";
 
   var REACH_MYSTI =
