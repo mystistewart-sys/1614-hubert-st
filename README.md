@@ -38,11 +38,31 @@ No listing photography has been delivered. The gallery renders 13 labelled
 placeholder frames and the hero renders a neutral placeholder, so the site is
 complete and shippable without them.
 
-To swap in the real photographs, see `assets-source/README.md`. In short: drop
-the files in using the slugs from the `PHOTOS` array in
-`public/assets/js/main.js`, set `PHOTOS_PENDING = false` in the same file,
-restore the `<picture>` markup and hero preload in `index.html`, and delete the
-placeholder note under the Gallery heading.
+The 14 slots are keyed to the views actually photographed for this listing, so
+delivering the files is a drop-in rather than a re-slug.
+
+```bash
+pip install Pillow                       # local authoring only — not a site dependency
+# put the originals in assets-source/photos-original/
+# fill in tools/photo-map.txt  (source file -> slug)
+python3 tools/photos.py --map tools/photo-map.txt \
+        --hero assets-source/photos-original/<front elevation>.jpg
+```
+
+`tools/photos.py` writes `<slug>.jpg/.webp` at 1800w and `<slug>-t.jpg/.webp`
+at 800w for every slot, plus the three hero widths and the 1200 x 630 social
+card. It applies and strips EXIF orientation, never upscales (and tells you
+which sources were too small), and refuses to run if a slug in the map is not
+in `main.js` or if a slug has no source — a listing page that silently drops a
+photo is worse than a failed run.
+
+Then, by hand: set `PHOTOS_PENDING = false` in `main.js`, restore the
+`<picture>` markup and the hero preload link in `index.html`, remove the
+placeholder note under the Gallery heading, and restore the four
+`og:image`/`twitter:image` tags with `summary_large_image`. That whole path has
+been exercised end to end against test images — gallery, lightbox, WebP
+negotiation and hero srcset all behave — so it is a known-good swap, not a
+hopeful one.
 
 The social card (`og:image` / `twitter:image`) is deliberately absent until a
 1200 × 630 card exists — a card pointing at a missing image looks worse in a
