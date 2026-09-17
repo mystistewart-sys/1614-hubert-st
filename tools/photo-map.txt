@@ -1,26 +1,28 @@
 # Source file -> gallery slug, one per line, whitespace separated.
-# Paths are relative to the repo root. Lines after # are ignored.
+# Paths are relative to the repo root. Anything after # is ignored.
 #
-# Run:  pip install Pillow
-#       python3 tools/photos.py --map tools/photo-map.txt \
-#               --hero assets-source/photos-original/<the front elevation>.jpg
+#   pip install Pillow
+#   python3 tools/photos.py --map tools/photo-map.txt \
+#           --hero assets-source/photos-original/DSC02278.jpg
 #
-# The slugs below are the 14 slots in the PHOTOS array in
-# public/assets/js/main.js, in page order. Every slug needs a source, or the
-# run stops — pass --allow-missing to build the rest and leave the others on
-# their placeholders.
-#
-# assets-source/photos-original/DSC02278.jpg   exterior-front
-# assets-source/photos-original/DSC02582.jpg   living-to-kitchen
-# assets-source/photos-original/DSC02598.jpg   living-entry
-# assets-source/photos-original/DSC02622.jpg   living-desk
-# assets-source/photos-original/....jpg        living-detail
-# assets-source/photos-original/....jpg        kitchen-wide
-# assets-source/photos-original/....jpg        kitchen-range-wall
-# assets-source/photos-original/....jpg        kitchen-island
-# assets-source/photos-original/....jpg        kitchen-range
-# assets-source/photos-original/....jpg        kitchen-to-rooms
-# assets-source/photos-original/DSC02628.jpg   bedroom
-# assets-source/photos-original/....jpg        bedroom-closets
-# assets-source/photos-original/DSC02631.jpg   bath-vanity
-# assets-source/photos-original/....jpg        bath-shower
+# Sources fall into two tiers. DSC*.jpg are the photographer's originals at
+# 4000-6000px. The rest are MLS exports at 1013-2048px, several of them PNGs
+# re-encoded from JPEG. Where an original exists it is used; the exports fill
+# the rest and are flagged by the tool when they fall short of 1800px.
+
+assets-source/photos-original/DSC02278.jpg                                                            exterior-front
+assets-source/photos-original/a0FPl000001nEdzMAE.jpg                                                  living-to-kitchen
+assets-source/photos-original/living room photo 2.jpg                                                 living-entry
+assets-source/photos-original/living room photo.jpg                                                   living-seating
+assets-source/photos-original/DSC02582.jpg                                                            living-desk
+assets-source/photos-original/d8a3f0bf1b4f2b3d36b920985864d9e2l-m859428795od-w1024_h768_x2 - Edited.png    kitchen-wide
+assets-source/photos-original/d8a3f0bf1b4f2b3d36b920985864d9e2l-m1461469683od-w1024_h768_x2 - Edited.png   kitchen-range-wall
+assets-source/photos-original/d8a3f0bf1b4f2b3d36b920985864d9e2l-m968869400od-w1024_h768_x2 - Edited.png    kitchen-island
+assets-source/photos-original/d8a3f0bf1b4f2b3d36b920985864d9e2l-m764681363od-w1024_h768_x2 - Edited.png    kitchen-range
+assets-source/photos-original/d8a3f0bf1b4f2b3d36b920985864d9e2l-m316264468od-w1024_h768_x2 - Edited.png    kitchen-sink
+assets-source/photos-original/d8a3f0bf1b4f2b3d36b920985864d9e2l-m2229552002od-w1024_h768_x2 - Edited (1).png  kitchen-to-rooms
+assets-source/photos-original/d8a3f0bf1b4f2b3d36b920985864d9e2l-m329461588od-w1024_h768_x2 - Edited.png    bedroom
+assets-source/photos-original/d8a3f0bf1b4f2b3d36b920985864d9e2l-m1468770105od-w1024_h768_x2 - Edited.png   bedroom-closets
+assets-source/photos-original/DSC02631.jpg                                                            bath-vanity
+assets-source/photos-original/DSC02622.jpg                                                            bath-detail
+assets-source/photos-original/d8a3f0bf1b4f2b3d36b920985864d9e2l-m1862269611od-w1024_h768_x2 - Edited.png   bath-shower

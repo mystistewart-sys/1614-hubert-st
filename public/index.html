@@ -30,18 +30,21 @@
 <meta property="og:title" content="1614 Hubert Street — East Dallas">
 <meta property="og:description" content="A fully renovated 1920 Craftsman cottage in Ross Avenue Heights. 744 sq ft, one bedroom, offered fully furnished. No HOA. $485,000.">
 <meta property="og:url" content="https://1614-hubert-st.netlify.app/">
-<!-- og:image / twitter:image are intentionally absent until the property's own
-     social card artwork exists. A card pointing at a missing or placeholder
-     image looks worse in a feed than no card image at all. Add the 1200x630
-     og-card.jpg, restore the four image tags, and switch the Twitter card back
-     to summary_large_image. -->
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://1614-hubert-st.netlify.app/assets/img/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The 1920 Craftsman cottage at 1614 Hubert Street, Dallas.">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="1614 Hubert Street — East Dallas">
 <meta name="twitter:description" content="Renovated 1920 cottage, 744 sq ft, one bedroom, fully furnished, solar installed 2023, no HOA. $485,000.">
+<meta name="twitter:image" content="https://1614-hubert-st.netlify.app/assets/img/og-card.jpg">
 
 <meta name="theme-color" content="#7a5522">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
+<link rel="preload" as="image" fetchpriority="high"
+      imagesrcset="/assets/img/hero/hero-md.webp 900w, /assets/img/hero/hero-lg.webp 1400w, /assets/img/hero/hero-xl.webp 2048w"
+      imagesizes="100vw" type="image/webp" href="/assets/img/hero/hero-lg.webp">
 <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
@@ -95,10 +98,14 @@
 <!-- ============================ HERO ============================ -->
 <section class="hero" aria-label="Property introduction">
   <div class="hero__media">
-    <!-- Photography pending. When the real hero lands, restore the <picture>
-         block with the webp/jpeg srcsets and the preload link in <head>. -->
-    <img src="/assets/img/hero/hero-placeholder.svg" width="1400" height="933" fetchpriority="high" decoding="async"
-         alt="Photography for 1614 Hubert Street is being prepared.">
+    <picture>
+      <source type="image/webp" sizes="100vw"
+        srcset="/assets/img/hero/hero-md.webp 900w, /assets/img/hero/hero-lg.webp 1400w, /assets/img/hero/hero-xl.webp 2048w">
+      <source type="image/jpeg" sizes="100vw"
+        srcset="/assets/img/hero/hero-md.jpg 900w, /assets/img/hero/hero-lg.jpg 1400w, /assets/img/hero/hero-xl.jpg 2048w">
+      <img src="/assets/img/hero/hero-lg.jpg" width="1400" height="933" fetchpriority="high" decoding="async"
+           alt="The 1920 Craftsman cottage at 1614 Hubert Street, seen from the front walk.">
+    </picture>
   </div>
 
   <div class="hero__body">
@@ -161,7 +168,6 @@
     <div class="rv">
       <p class="eyebrow">Photography</p>
       <h2 class="h-section">A closer look at the home.</h2>
-      <p class="lede" style="margin-top:1rem;max-width:58ch" id="galNote">Photography for this listing is being prepared. The frames below are placeholders — each one names the view it will hold.</p>
     </div>
 
     <div class="gal__bar" role="group" aria-label="Filter photographs by area" id="galBar"><!-- injected --></div>
@@ -555,6 +561,7 @@
       "name": "1614 Hubert Street, Dallas, TX 75206",
       "description": "A fully renovated 1920 Craftsman cottage in Ross Avenue Heights, East Dallas. One bedroom, one full bath, 744 sq ft on a 2,300 sq ft lot, offered fully furnished, with solar panels installed in 2023, off-street driveway parking and no HOA.",
       "datePosted": "2026-08-22",
+      "image": "https://1614-hubert-st.netlify.app/assets/img/og-card.jpg",
       "about": { "@id": "https://1614-hubert-st.netlify.app/#residence" },
       "offers": { "@id": "https://1614-hubert-st.netlify.app/#offer" },
       "provider": { "@id": "https://1614-hubert-st.netlify.app/#agent" }

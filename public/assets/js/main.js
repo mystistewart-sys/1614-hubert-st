@@ -170,7 +170,7 @@
 
   /* ----------------------------- Gallery ----------------------------- */
   var CATS = [
-    ['all', 'All 14'],
+    ['all', 'All 16'],
     ['living', 'Living'],
     ['kitchen', 'Kitchen & Dining'],
     ['bed', 'Bedroom'],
@@ -184,30 +184,29 @@
      slot says what it will hold. When the photographs arrive: drop
      <slug>.jpg/.webp and <slug>-t.jpg/.webp into /assets/img/gallery/, set this
      to false, and remove the note under the Gallery heading in index.html. */
-  var PHOTOS_PENDING = true;
+  var PHOTOS_PENDING = false;
 
 
   /* slug, category, short caption, full alt text */
-  /* Slots are keyed to the views actually photographed for this listing, so
-     delivering the files is a drop-in: name each one <slug>.jpg / <slug>-t.jpg
-     (plus .webp) and set PHOTOS_PENDING to false. */
+  /* slug, category, short caption, full alt text */
   var PHOTOS = [
-    ['exterior-front','outside','Front elevation','The 1920 Craftsman cottage at 1614 Hubert Street, seen from the front walk.'],
-    ['living-to-kitchen','living','Living to kitchen','The living room looking through to the kitchen and island dining.'],
-    ['living-entry','living','Living room','The living room from the entry, under a tray ceiling.'],
-    ['living-desk','living','Desk nook','The desk nook at the front window.'],
-    ['living-detail','living','Living detail','Built-in cabinetry and trim detail in the living room.'],
-    ['kitchen-wide','kitchen','Kitchen','The kitchen with island dining beneath a chandelier.'],
-    ['kitchen-range-wall','kitchen','Range wall','The range wall, with cabinetry to the ceiling and the apron-front sink beyond.'],
-    ['kitchen-island','kitchen','Island','The island, in quartz with brass cup pulls.'],
+    ['exterior-front','outside','Front elevation','The 1920 Craftsman cottage at 1614 Hubert Street, with its covered front porch, blue front door and window boxes.'],
+    ['living-to-kitchen','living','Living to kitchen','The open living room looking through to the kitchen and island dining beyond.'],
+    ['living-entry','living','From the entry','The living room seen from the front door, under a tray ceiling, with herringbone floors running through.'],
+    ['living-seating','living','Living room','The living room seating area, open to the kitchen beyond.'],
+    ['living-desk','living','Desk nook','A desk set under the front window, beside the living room seating.'],
+    ['kitchen-wide','kitchen','Kitchen','The kitchen, with island dining beneath a chandelier and a door to the side of the house.'],
+    ['kitchen-range-wall','kitchen','Range wall','Cabinetry to the ceiling along the range wall, with the apron-front sink beyond.'],
+    ['kitchen-island','kitchen','Island','The kitchen island in quartz, with brass cup pulls.'],
     ['kitchen-range','kitchen','Gas range','The gas range with double ovens, flanked by turned cabinet legs.'],
-    ['kitchen-to-rooms','kitchen','Kitchen to bath and bedroom','The kitchen looking toward the bath and the bedroom doors.'],
-    ['bedroom','bed','Bedroom','The bedroom, with built-in cabinetry and open shelving.'],
-    ['bedroom-closets','bed','Closets','The bedroom closets behind their original-style wood doors.'],
-    ['bath-vanity','bath','Vanity','The vanity, in black stone with brass fixtures.'],
-    ['bath-shower','bath','Bath','The bath, with a glass-enclosed subway-tiled shower and built-in cabinetry.']
+    ['kitchen-sink','kitchen','Apron-front sink','The stainless apron-front sink beneath the kitchen window.'],
+    ['kitchen-to-rooms','kitchen','Kitchen to bath and bedroom','The kitchen looking toward the bath and bedroom doors, past a built-in niche.'],
+    ['bedroom','bed','Bedroom','The bedroom, with built-in cabinetry, open shelving and its closet doors.'],
+    ['bedroom-closets','bed','Closets','The bedroom closets, behind period-style wood doors.'],
+    ['bath-vanity','bath','Vanity','The vanity in black stone with brass fixtures, beside the glass-enclosed shower.'],
+    ['bath-detail','bath','Vanity detail','The mirror and sconces above the black stone vanity.'],
+    ['bath-shower','bath','Bath','The bath, with its glass-enclosed subway-tiled shower and built-in cabinetry.']
   ];
-
 
   /* A placeholder frame must never describe a photograph that does not exist,
      so its alt text says what it is. */
