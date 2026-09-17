@@ -13,11 +13,14 @@ const MODEL = process.env.CONCIERGE_MODEL || 'claude-opus-5';
 const MAX_QUESTION = 600;
 
 /* ---------------------------- KNOWLEDGE BASE ----------------------------
-   Source: NTREIS MLS #21366713 (Agent Full, prepared 09/17/2026).
-   That is the ONLY document supplied for this property. No appraisal
-   district record, tax bill, comparables, solar paperwork or short-term
-   rental history was provided, and the gaps are marked below so the
-   concierge says "I don't have that" instead of filling them in.        */
+   Sources: NTREIS MLS #21366713 (Agent Full, prepared 09/17/2026) and
+   Dallas Central Appraisal District account #00000155968000100 (2026
+   Certified Values, retrieved 08/21/2026).
+   No tax bill, comparables, solar paperwork or short-term rental history
+   was provided, and those gaps are marked below so the concierge says
+   "I don't have that" instead of filling them in.
+   The deed transfer date is in the appraisal record but is deliberately
+   NOT reproduced here — see data/property.json.                         */
 
 const KB = `
 ## 1. IDENTITY
@@ -33,6 +36,9 @@ Price per square foot: $651.88.
 Interior: 744 sq ft, per the assessor.
 Bedrooms: 1. Bathrooms: 1 full. Living areas: 1. Dining areas: 1.
 Year built: 1920, per the assessor. Single story. Detached single-family house.
+The appraisal district records an EFFECTIVE year built of 2010 against the 1920
+actual build — its own recognition that the house has been substantially updated.
+That is worth mentioning when the age of the house comes up.
 Offered FULLY FURNISHED per the public remarks. Which furnishings convey is settled in
 the contract — do not list or promise specific items, no inventory was provided.
 Listed terms: Cash, Conventional. Possession at closing and funding.
@@ -48,8 +54,9 @@ could be converted, and never speculate about adding square footage.
 
 ## 4. CONSTRUCTION AND SYSTEMS
 Housing type: Single Detached. Style: Contemporary/Modern, Craftsman.
-Construction: Frame, Siding. Foundation: Pillar/Post/Pier. Roof: Composition.
-Basement: No. Levels: 1.
+Construction: Frame, Siding. Foundation: Pier and beam. Roof: Composition
+shingle, hip roof. Basement: No. Levels: 1. Fence: wood.
+No pool, spa, sauna, deck or lawn sprinkler system.
 Flooring: Luxury Vinyl Plank. (The remarks describe a herringbone pattern; the
 material of record is luxury vinyl plank. If asked about the floors, describe the
 herringbone pattern and the material together.)
@@ -92,31 +99,42 @@ The number of cars it holds is NOT documented. Do not state a number.
 ## 7. LAND AND LEGAL
 Parcel / account: 00000155968000100.
 Legal: ROSS AVE HEIGHTS BLK O/1480 S PT LT 1. Lot 1, Block O/1480.
-Lot size: 0.053 acres — roughly 2,300 sq ft, a compact urban lot. The acreage is
-rounded at source, so give the square-foot figure as approximate and defer to a survey.
-Lot dimensions: not stated. Not subdividable. Single parcel. PID: No. MUD: No.
+Lot size: 2,300 sq ft — 46 feet of frontage by 50 feet deep, which is 0.053 acres.
+A compact urban lot. Defer to a survey for exact boundaries.
+The appraisal district values the land at $60.00 per square foot, $138,000 in total.
+ZONING: the appraisal district's land record shows the zoning as Multifamily
+District 2, with the state code Single Family Residences. Be careful here. If asked,
+you may say that is the zoning shown on the public land record, and you must add that
+it has not been verified with the City of Dallas and says nothing about what could be
+built on a 2,300 sq ft lot. NEVER suggest, estimate or imply development potential,
+unit counts, density or redevelopment value. Refer the question to Mysti.
+Not subdividable. Single parcel. PID: No. MUD: No.
 
 ## 8. HOA
 There is NO homeowners association. No dues, no assessment, no association rules,
 no architectural committee. If asked about HOA dues, the answer is that there are none.
 
 ## 9. TAXES — READ CAREFULLY
-The recorded unexempt tax figure is $7,074 per year (about $590 a month).
-CRITICAL BUYER POINT: that figure reflects the CURRENT taxable value, not the list
-price. Texas has no California-style Proposition 13 cap; values are reappraised toward
-market, so a sale at $485,000 can move the assessment up substantially.
-At $485,000 and a combined Dallas rate of 2.22671% per $100 of value, the estimate is
-roughly $10,800 a year — about $900 a month. Always present that as an ESTIMATE with
-the assumption stated, never as a quote or a bill.
-The combined rate and the jurisdiction breakdown were NOT supplied for this parcel;
-they are the standard City of Dallas / Dallas ISD / Dallas County / Dallas College /
-Parkland rates. Do not itemise the jurisdictions and do not present the rate as
-confirmed for this address — say the exact rate should be verified with the county.
-Exemptions: not stated; the recorded figure is the unexempt amount.
-A buyer who occupies the home as a principal residence may be eligible to file a Texas
-homestead exemption, which would lower the taxable value; eligibility must be confirmed
-with the county. A buyer using it as a second home or a rental would not qualify.
-No special assessments disclosed. Mello-Roos does not exist in Texas.
+Current tax: $6,324.97 per year, about $527 a month, with no exemptions on record.
+That is the appraisal district's own 2026 estimate on a certified taxable value of
+$284,050 (improvement $146,050 + land $138,000).
+CRITICAL BUYER POINT: $284,050 is about 59% of the $485,000 asking price. Texas has
+no California-style Proposition 13 cap; values are reappraised toward market, so a
+sale at the asking price can move the assessment up substantially.
+At $485,000 and the same combined rate of 2.22671% per $100 of value, the estimate is
+roughly $10,800 a year — about $900 a month, roughly $373 a month more than is paid
+today. Always present that as an ESTIMATE with the assumption stated, never as a quote
+or a bill, and never promise when or whether a reassessment will happen — that is the
+appraisal district's decision.
+The combined rate is made up of City of Dallas 0.6988, Dallas ISD 0.993835, Dallas
+County 0.2155, Dallas College 0.106575 and Parkland Hospital 0.212, and those five
+amounts reconcile exactly to the $6,324.97 total. You may give the combined rate. Give
+the jurisdiction breakdown only if specifically asked for it.
+Exemptions: none on the account. A buyer who occupies the home as a principal residence
+may be eligible to file a Texas homestead exemption, which would lower the taxable
+value; eligibility must be confirmed with the county. A buyer using it as a second home
+or a rental would not qualify.
+No special assessments disclosed. No PID, no MUD. Mello-Roos does not exist in Texas.
 Never present any tax figure as guaranteed.
 
 ## 10. SOLAR — HANDLE WITH CARE
@@ -168,10 +186,10 @@ Do NOT state drive times, distances in miles, walk scores, ratings, or name
 restaurants, parks, venues or employers — none of that is in the record.
 
 ## 15. NOT HELD HERE — if asked, say Mysti can provide these
-Listing photography, floor plan, virtual tour and video; renovation cost schedule and
-permits; the itemised tax bill and appraisal district detail; sale and lease
-comparables; solar documentation; short-term rental permit and income history;
-seller's disclosure notice; survey; and any online booking link.
+Floor plan, virtual tour and video; renovation cost schedule and permits; the itemised
+tax bill from the collecting agency; sale and lease comparables; solar documentation;
+short-term rental permit and income history; seller's disclosure notice; survey; and
+any online booking link.
 
 ## 16. CONTACT AND NEXT STEPS
 Mysti Stewart, Mysti Stewart Group, Compass RE Texas, LLC. Texas license #0525273.

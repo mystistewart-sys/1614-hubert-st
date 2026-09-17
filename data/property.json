@@ -2,28 +2,29 @@
   "_meta": {
     "purpose": "Single source of truth for 1614 Hubert Street, Dallas, TX 75206. Used by the public page and the AI concierge.",
     "sources": [
-      "NTREIS MLS Agent Full report, MLS# 21366713, prepared 09/17/2026"
+      "NTREIS MLS Agent Full report, MLS# 21366713, prepared 09/17/2026",
+      "Dallas Central Appraisal District, Residential Account Detail #00000155968000100, retrieved 08/21/2026 (2026 Certified Values, current 2027 roll)"
     ],
     "sourcesNotSupplied": [
-      "Dallas Central Appraisal District account detail for parcel 00000155968000100",
-      "Itemised property tax bill",
+      "Itemised property tax bill from the collecting agency",
       "Realist / CoreLogic report",
       "Sale comparables packet",
       "Lease comparables packet",
-      "Renovation / upgrade cost schedule",
+      "Renovation / upgrade cost schedule and permits",
       "Seller's disclosure notice",
       "Survey",
       "Solar system documentation (ownership, lease or PPA, production, warranty)",
       "Short-term rental permit, history and income records",
       "Floor plan, Matterport tour and property video",
-      "Listing photography"
+      "Listing photography as image files (photographs have been seen but not delivered as files)"
     ],
     "confidentialExcluded": [
-      "Owner name / owner of record (MLS: 'See Tax Records')",
+      "Owner of record name and mailing address (DCAD)",
       "Keybox number and keybox type (MLS)",
       "Private agent remarks (MLS)",
-      "Agent-only showing service phone number and showing platform login (MLS)",
-      "Seller type and any seller motivation or negotiating position"
+      "Agent-only showing service phone number and showing platform (MLS)",
+      "Seller type and any seller motivation or negotiating position",
+      "Deed transfer date — held here for the listing side only, deliberately NOT published on the page or given to the concierge (see taxes.deedTransferDateInternal)"
     ],
     "lastReviewed": "2026-09-17"
   },
@@ -75,13 +76,13 @@
     "squareFeet": 744,
     "squareFeetSource": "Assessor",
     "yearBuilt": 1920,
-    "yearBuiltSource": "Assessor",
+    "yearBuiltSource": "Assessor (MLS and DCAD agree)",
     "yearBuiltCondition": "Preowned",
     "levels": 1,
     "propertyAttached": false,
     "fireplaces": 0,
     "pool": false,
-    "foundation": "Pillar/Post/Pier",
+    "foundation": "Pillar/Post/Pier (DCAD: Pier and Beam)",
     "construction": "Frame, Siding",
     "roof": "Composition",
     "flooring": "Luxury Vinyl Plank",
@@ -89,7 +90,20 @@
     "heating": "Central",
     "cooling": "Central Air",
     "basement": false,
-    "renovationNote": "The public remarks describe the home as fully renovated, including the kitchen and the bath. [VERIFY] No renovation date, cost schedule or permit record was supplied."
+    "renovationNote": "The public remarks describe the home as fully renovated, including the kitchen and the bath. [VERIFY] No renovation date, cost schedule or permit record was supplied.",
+    "effectiveYearBuilt": 2010,
+    "effectiveYearBuiltNote": "DCAD records an effective year built of 2010 against an actual 1920 build — the appraisal district's own recognition that the house has been substantially updated. Useful third-party corroboration of the renovation.",
+    "roofDetail": "DCAD records roof type HIP, material COMP SHINGLES.",
+    "exteriorWallMaterial": "Frame",
+    "buildingClassDcad": "04",
+    "desirabilityDcad": "Excellent",
+    "depreciationDcad": "10%",
+    "percentCompleteDcad": "100%",
+    "kitchensDcad": 1,
+    "fenceTypeDcad": "Wood",
+    "sprinklerDcad": false,
+    "deckDcad": false,
+    "poolSpaSaunaDcad": false
   },
   "rooms": [
     {
@@ -187,13 +201,23 @@
     "note": "[VERIFY] The MLS does not state how many cars the driveway and parking pad hold."
   },
   "land": {
+    "squareFeet": 2300,
+    "squareFeetSource": "DCAD land record, 2026 Certified Values — 2,300.0000 square feet",
+    "frontageFt": 46,
+    "depthFt": 50,
     "acres": 0.053,
-    "squareFeetApprox": 2309,
-    "squareFeetNote": "0.053 acres as recorded in the MLS, which is about 2,309 sq ft. The acreage is rounded to three decimals at source, so the square-foot figure is approximate. [VERIFY] against a survey.",
+    "acresNote": "MLS records 0.053 acres; DCAD records 2,300 sq ft. 2,300 / 43,560 = 0.0528 acres, so the two agree.",
     "lotSizeRange": "Less Than .5 Acre (not Zero)",
-    "lotDimensions": "[VERIFY] Not stated in the MLS.",
+    "landUnitPrice": 60.0,
+    "landPricingMethod": "Standard, $60.00 per square foot, 0% market adjustment",
+    "landValue": 138000,
+    "stateCode": "Single Family Residences",
+    "zoningDcad": "Multifamily District 2",
+    "zoningNote": "[VERIFY] 'MULTIFAMILY DISTRICT 2' is the zoning shown on the appraisal district's land record. It is NOT a zoning verification from the City of Dallas and says nothing about what could be built on a 2,300 sq ft lot. Confirm current zoning, overlays and any development rights with the City of Dallas before representing this to anyone.",
     "lot": "1",
     "block": "O1480",
+    "neighborhoodCodeDcad": "1DSG09",
+    "mapsco": "36-X (Dallas)",
     "subdividable": false,
     "multiParcel": false
   },
@@ -206,22 +230,63 @@
     "parcelId": "00000155968000100",
     "legalDescription": "ROSS AVE HEIGHTS BLK O/1480 S PT LT 1",
     "appraisalDistrict": "Dallas Central Appraisal District",
-    "unexemptAnnualTax": 7074,
-    "unexemptAnnualTaxSource": "MLS 'Unexmpt Tx' field, MLS# 21366713",
-    "unexemptMonthly": 589.5,
+    "taxYear": 2026,
+    "valuesStatus": "2026 Certified Values",
+    "revaluationYear": 2026,
+    "previousRevaluationYear": 2025,
+    "improvementValue": 146050,
+    "landValue": 138000,
+    "marketValue": 284050,
+    "landShareOfValuePct": 48.6,
+    "exemptions": "None. DCAD shows no exemptions on this account.",
+    "currentAnnualTax": 6324.97,
+    "currentAnnualTaxRounded": 6325,
+    "currentMonthlyTax": 527.08,
+    "combinedRatePer100": 2.22671,
     "combinedRatePct": 2.22671,
-    "combinedRateSource": "[VERIFY] Combined 2026 Dallas rate (City of Dallas 0.6988 + Dallas ISD 0.993835 + Dallas County 0.2155 + Dallas College 0.106575 + Parkland Hospital 0.212 per $100). These are jurisdiction-level rates for a City of Dallas / Dallas ISD address; no DCAD record or tax bill was supplied for THIS parcel, so both the rate and the jurisdictions must be confirmed before they are relied on.",
+    "jurisdictions": [
+      {
+        "name": "City of Dallas",
+        "ratePer100": 0.6988,
+        "amount": 1984.94
+      },
+      {
+        "name": "Dallas ISD",
+        "ratePer100": 0.993835,
+        "amount": 2822.99
+      },
+      {
+        "name": "Dallas County",
+        "ratePer100": 0.2155,
+        "amount": 612.13
+      },
+      {
+        "name": "Dallas College",
+        "ratePer100": 0.106575,
+        "amount": 302.73
+      },
+      {
+        "name": "Parkland Hospital",
+        "ratePer100": 0.212,
+        "amount": 602.19
+      }
+    ],
     "estimatedTaxAtListPrice": 10799.54,
     "estimatedTaxAtListPriceMonthly": 900,
-    "impliedCurrentTaxableValue": 317688,
-    "impliedCurrentTaxableValueNote": "[VERIFY] Derived, not supplied: $7,074 ÷ 2.22671% implies a taxable value near $317,700. No DCAD assessed value was provided for this parcel.",
-    "exemptions": "[VERIFY] Not stated. The MLS figure is described as the unexempt amount.",
+    "estimatedIncreaseAfterSale": 4474.57,
+    "estimatedIncreaseAfterSaleMonthly": 372.88,
+    "assessedAsPctOfListPrice": 58.6,
+    "mlsUnexemptFigure": 7074,
+    "mlsUnexemptFigureNote": "The MLS records an unexempt tax figure of $7,074, which does not match the appraisal district's $6,324.97 on the 2026 certified value of $284,050. The DCAD figure is used everywhere on this site because it is itemised by jurisdiction and reconciles exactly ($284,050 x 2.22671% = $6,324.97). The MLS field should be corrected or its basis confirmed.",
     "specialAssessments": "None disclosed. Public Improvement District (PID): No. Municipal Utility District (MUD): No.",
     "melloRoos": "Not applicable — Mello-Roos is a California mechanism and does not exist in Texas.",
+    "deedTransferDateInternal": "10/15/2025 per DCAD. LISTING-SIDE ONLY: deliberately excluded from the public page and the concierge knowledge base. It is public record and a buyer's agent can pull it, but the seller's own marketing site does not volunteer a recent purchase date.",
     "notes": [
-      "The single most important tax point for a buyer: the $7,074 figure reflects the current taxable value, not the list price. Texas has no California-style Proposition 13 cap, and values are reappraised toward market. At the $485,000 list price the same combined rate produces roughly $10,800 a year — about $900 a month — which is an estimate, not a quote.",
+      "The single most important tax point for a buyer: $6,325 is assessed on a taxable value of $284,050 — about 59% of the $485,000 asking price. Texas has no California-style Proposition 13 cap and values are reappraised toward market, so a sale at the asking price can move the assessment up substantially.",
+      "At $485,000 the same combined rate produces roughly $10,800 a year, about $900 a month — an increase of roughly $373 a month over what is paid today. That is an ESTIMATE, not a quote, and the timing and amount of any reassessment are the appraisal district's decision.",
+      "The combined rate of 2.22671% and all five jurisdiction amounts come directly from the appraisal district's own estimate for this parcel and reconcile exactly to its stated total.",
       "A buyer who occupies the home as a principal residence may be eligible to file a Texas homestead exemption, which would reduce the taxable value. Eligibility and amounts must be confirmed with DCAD. A buyer using the home as a short-term rental or second home would not qualify.",
-      "Assessed values are reviewed annually and can change through the appraisal review process."
+      "Land is $138,000 of the $284,050 certified value — roughly 49% — on a 2,300 sq ft lot valued at $60.00 per square foot."
     ]
   },
   "specialItems": {

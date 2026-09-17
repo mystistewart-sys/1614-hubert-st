@@ -257,19 +257,26 @@ take effect with no other change. Until then the fallbacks render.
 ## Verified against
 
 - NTREIS MLS #21366713, Agent Full report, prepared 09/17/2026
+- Dallas Central Appraisal District, Residential Account Detail
+  #00000155968000100, retrieved 08/21/2026 (2026 Certified Values)
 
-That is the **only** document supplied for this property. No appraisal district
-record, tax bill, comparables, solar paperwork, short-term rental history,
-survey or seller's disclosure was provided, so:
+Every tax figure on the site reconciles to the appraisal district's own estimate:
+$284,050 x 2.22671% = $6,324.97, and the five jurisdiction amounts sum to the
+same number. The lot is 2,300 sq ft (46 x 50) at $60.00 per square foot, and the
+0.053 acres in the MLS converts to the same figure.
 
-- The **$7,074** annual tax is the MLS unexempt figure. The combined
-  **2.22671%** rate used by the estimator is the standard City of Dallas /
-  Dallas ISD / Dallas County / Dallas College / Parkland rate for a City of
-  Dallas address; it has not been confirmed against a bill for this parcel.
-- The **~$10,800** at-list estimate and the implied current taxable value near
-  **$317,700** are derived from those two numbers, not read from a record.
-- The **~2,300 sq ft** lot is 0.053 acres converted; the acreage is rounded at
-  source. Verify against a survey.
+Two things to note:
 
-`data/property.json` carries the full list of what was supplied, what was
-derived and what is still outstanding.
+- **The MLS unexempt tax field says $7,074; the appraisal district says
+  $6,324.97.** The site uses the appraisal district figure everywhere, because
+  it is itemised by jurisdiction and reconciles exactly. The MLS field should be
+  corrected or its basis established.
+- **The deed transfer date is in the appraisal record and is deliberately not on
+  the site or in the concierge.** It is public record and a buyer's agent can
+  pull it, but a seller's own marketing page does not volunteer it. It is kept in
+  `data/property.json` under `taxes.deedTransferDateInternal` for the listing side.
+
+Still outstanding: listing photography as image files, solar documentation,
+short-term rental permit and history, comparables, survey, seller's disclosure,
+floor plan and virtual tour. `data/property.json` carries the full list of what
+was supplied, what was derived and what is still missing.
