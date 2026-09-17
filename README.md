@@ -257,16 +257,15 @@ PNG of the full lockup are archived in `assets-source/`.
 |---|---|
 | Primary brand (decorative only) | `#a4b7a2` sage — 2.13:1, never used for text |
 | Sage as text | `#60785d` — 4.84:1 on white |
-| Property accent | `#7a5522` aged brass — 6.67:1 on white |
+| Property accent | `#245d61` deep teal — 7.46:1 on white |
 | Ink / soft / faint | `#16191a` / `#4f5754` / `#6a7370` |
 | Display font | Averta PE → Avenir Next → system sans |
 | Body font | Minion Pro → Iowan Old Style → Palatino → Georgia |
 
 The accent is per-listing and routes through three tokens — `--accent`,
 `--accent-dark`, `--accent-tint` at the top of `styles.css` — plus the
-`theme-color` meta tag. Aged brass was chosen for this listing from the brass
-hardware and black fixtures in the renovated kitchen and bath. Any replacement
-must clear 4.5:1 on both `--white` and `--paper`.
+`theme-color` meta tag. Any replacement must clear 4.5:1 on both `--white` and
+`--paper`.
 
 Averta PE and Minion Pro are licensed fonts and are **not** bundled. The stack
 names them first, so adding the licensed webfonts via `@font-face` makes them

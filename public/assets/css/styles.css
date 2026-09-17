@@ -1,6 +1,6 @@
 /* =========================================================================
    1614 Hubert Street — Mysti Stewart Group / Compass RE Texas, LLC
-   Brand: sage #a4b7a2 (primary) · aged brass #7a5522 (property accent)
+   Brand: sage #a4b7a2 (primary) · deep teal #245d61 (property accent)
    Editorial luxury / modern minimal. No rounded cards, shadows or gradients.
    ========================================================================= */
 
@@ -22,12 +22,11 @@
   --sage-tint:#eaefe9;
   /* Per-listing accent. Everything accented routes through these three
      tokens, so a new property is a three-value change.
-     1614 Hubert: aged brass, picked up from the brass hardware and black
-     fixtures in the renovated kitchen and bath.
-     Contrast: 6.67:1 on --white, 6.20:1 on --paper — safe for text. */
-  --accent:#7a5522;
-  --accent-dark:#5e401a;
-  --accent-tint:#f3ece1;
+     1614 Hubert: deep teal.
+     Contrast: 7.46:1 on --white, 6.95:1 on --paper — safe for text. */
+  --accent:#245d61;
+  --accent-dark:#18464a;
+  --accent-tint:#e7eeee;
 
   --font-display:'Averta PE','Avenir Next',Avenir,'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
   --font-body:'Minion Pro','Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif;
