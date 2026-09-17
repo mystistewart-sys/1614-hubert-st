@@ -7,10 +7,14 @@
   /* ---------------------------------------------------------------------
      ANALYTICS CONFIGURATION
      ---------------------------------------------------------------------
-     The GA4 ID below was supplied in the build intake for this property.
-     CONFIRM it belongs to a GA4 property created for 1614 Hubert Street —
-     never run a listing on another listing's measurement ID, because the
-     two data sets cannot be separated afterwards.
+     GA4 is installed with Google's standard gtag.js snippet in the <head> of
+     index.html. It is deliberately NOT loaded from here as well: two
+     gtag('config', ...) calls for the same property double-count every
+     pageview. To change the measurement ID, edit the snippet in the HTML.
+
+     CONFIRM that ID belongs to a GA4 property created for 1614 Hubert Street.
+     Never run a listing on another listing's measurement ID — the two data
+     sets cannot be separated afterwards.
 
      Google Ads and Meta are inactive until IDs are added:
 
@@ -21,7 +25,6 @@
      Conversions fire on real visitor actions only — never on page load.
   --------------------------------------------------------------------- */
   var ANALYTICS = {
-    ga4: 'G-QGLE2JPPNS',
     googleAds: '',
     adsLabels: {},
     metaPixel: ''
@@ -30,15 +33,18 @@
   window.dataLayer = window.dataLayer || [];
 
   function loadAnalytics() {
-    var ids = [ANALYTICS.ga4, ANALYTICS.googleAds].filter(Boolean);
-    if (ids.length) {
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(ids[0]);
-      document.head.appendChild(s);
-      window.gtag = function () { window.dataLayer.push(arguments); };
-      window.gtag('js', new Date());
-      ids.forEach(function (id) { window.gtag('config', id); });
+    /* Google Ads only. gtag.js itself is already on the page from the <head>
+       snippet, so reuse it rather than loading a second copy. */
+    if (ANALYTICS.googleAds) {
+      if (typeof window.gtag !== 'function') {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(ANALYTICS.googleAds);
+        document.head.appendChild(s);
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+      }
+      window.gtag('config', ANALYTICS.googleAds);
     }
     if (ANALYTICS.metaPixel) {
       /* eslint-disable */
@@ -164,13 +170,14 @@
 
   /* ----------------------------- Gallery ----------------------------- */
   var CATS = [
-    ['all', 'All 13'],
+    ['all', 'All 14'],
     ['living', 'Living'],
-    ['kitchen', 'Kitchen'],
+    ['kitchen', 'Kitchen & Dining'],
     ['bed', 'Bedroom'],
     ['bath', 'Bath'],
-    ['outside', 'Exterior & Lot']
+    ['outside', 'Exterior']
   ];
+
 
   /* Photography for this listing has not been delivered. While this is true the
      gallery renders labelled placeholder frames, so the page ships and every
@@ -181,21 +188,26 @@
 
 
   /* slug, category, short caption, full alt text */
+  /* Slots are keyed to the views actually photographed for this listing, so
+     delivering the files is a drop-in: name each one <slug>.jpg / <slug>-t.jpg
+     (plus .webp) and set PHOTOS_PENDING to false. */
   var PHOTOS = [
-    ['exterior-front','outside','Front elevation','The front elevation of the 1920 cottage at 1614 Hubert Street.'],
-    ['front-porch','outside','Front porch','The covered front porch at the entry.'],
-    ['living-room','living','Living room','The living room, with built-in cabinets and herringbone-patterned floors.'],
-    ['living-open-kitchen','living','Living to kitchen','The living room looking through to the open kitchen.'],
-    ['living-builtins','living','Built-in cabinetry','Built-in cabinetry in the living room.'],
-    ['kitchen-island','kitchen','Kitchen island','The kitchen island with seating and brass hardware.'],
-    ['kitchen-range','kitchen','Gas range','The gas range and cabinetry in the renovated kitchen.'],
-    ['kitchen-sink','kitchen','Apron-front sink','The apron-front sink and countertop workspace.'],
-    ['bedroom','bed','Bedroom','The bedroom, 15 by 15 feet.'],
-    ['bedroom-closets','bed','Closets','The bedroom closets and custom closet system.'],
-    ['bath-shower','bath','Walk-in shower','The glass-enclosed walk-in shower with a built-in bench and subway tile.'],
-    ['bath-vanity','bath','Vanity','The vanity, with black fixtures and brass accents.'],
-    ['lot-solar','outside','Lot and solar','The lot and the solar panels installed in 2023.']
+    ['exterior-front','outside','Front elevation','The 1920 Craftsman cottage at 1614 Hubert Street, seen from the front walk.'],
+    ['living-to-kitchen','living','Living to kitchen','The living room looking through to the kitchen and island dining.'],
+    ['living-entry','living','Living room','The living room from the entry, under a tray ceiling.'],
+    ['living-desk','living','Desk nook','The desk nook at the front window.'],
+    ['living-detail','living','Living detail','Built-in cabinetry and trim detail in the living room.'],
+    ['kitchen-wide','kitchen','Kitchen','The kitchen with island dining beneath a chandelier.'],
+    ['kitchen-range-wall','kitchen','Range wall','The range wall, with cabinetry to the ceiling and the apron-front sink beyond.'],
+    ['kitchen-island','kitchen','Island','The island, in quartz with brass cup pulls.'],
+    ['kitchen-range','kitchen','Gas range','The gas range with double ovens, flanked by turned cabinet legs.'],
+    ['kitchen-to-rooms','kitchen','Kitchen to bath and bedroom','The kitchen looking toward the bath and the bedroom doors.'],
+    ['bedroom','bed','Bedroom','The bedroom, with built-in cabinetry and open shelving.'],
+    ['bedroom-closets','bed','Closets','The bedroom closets behind their original-style wood doors.'],
+    ['bath-vanity','bath','Vanity','The vanity, in black stone with brass fixtures.'],
+    ['bath-shower','bath','Bath','The bath, with a glass-enclosed subway-tiled shower and built-in cabinetry.']
   ];
+
 
   /* A placeholder frame must never describe a photograph that does not exist,
      so its alt text says what it is. */
