@@ -360,9 +360,10 @@
     }
   ],
   "marketing": {
-    "headline": "Small, and not one bit compromised",
+    "headline": "A proven short-term rental, offered furnished",
     "pullQuote": "744 square feet, renovated to the last inch, on a lot you can keep with a Saturday morning.",
-    "mlsPublicRemarksSource": "NTREIS MLS# 21366713 public remarks, written by the listing agent."
+    "mlsPublicRemarksSource": "NTREIS MLS# 21366713 public remarks, written by the listing agent.",
+    "positioning": "The hero and the page metadata lead on the investment case at Mysti Stewart's direction (2026-09-17). Every word traces to the listing's own public remarks: 'proven short-term rental' rests on the seller's statement that the property has been a successful short-term rental, and 'offered furnished' on the furnished-sale statement. No yield, income, occupancy, cap rate or permitting claim appears anywhere on the site, and none may be added until the [VERIFY] items under specialItems.shortTermRentalVerify are documented."
   },
   "agent": {
     "name": "Mysti Stewart",

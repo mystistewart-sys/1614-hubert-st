@@ -200,7 +200,13 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   font-family:var(--font-label);font-size:.68rem;font-weight:700;letter-spacing:.22em;
   text-transform:uppercase;color:var(--white);opacity:.92;margin:0 0 .85rem;
 }
-.hero h1{color:var(--white);font-size:clamp(1.75rem,4.7vw,3.4rem);max-width:17ch}
+.hero h1{
+  color:var(--white);font-size:clamp(1.75rem,4.7vw,3.4rem);
+  /* Tuned to the headline. 22ch suits the current 45-character line; a much
+     shorter headline wants a tighter measure. balance evens the line lengths
+     so the last line is never one orphaned word. */
+  max-width:22ch;text-wrap:balance;
+}
 .hero__tag{
   font-family:var(--font-body);font-size:clamp(1rem,1.7vw,1.32rem);
   color:rgba(255,255,255,.93);margin:.8rem 0 0;max-width:40ch;line-height:1.5;
