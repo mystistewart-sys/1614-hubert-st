@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 933" width="1400" height="933" role="img" aria-label="1614 Hubert Street — photography pending">
+  <rect width="1400" height="933" fill="#eef0ec"/>
+  <rect x="28" y="28" width="1344" height="877" fill="none" stroke="#c8cec6" stroke-width="2"/>
+  <g font-family="'Averta PE','Avenir Next',Avenir,'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif" text-anchor="middle" fill="#4f5754">
+    <text x="700" y="381" font-size="30" letter-spacing="6.0" fill="#7a5522">PHOTOGRAPHY PENDING</text>
+    <text x="700" y="492" font-size="74" font-weight="600" fill="#16191a">1614 Hubert Street</text>
+    <text x="700" y="578" font-size="30" fill="#6a7370">Dallas, Texas 75206  ·  MLS 21366713</text>
+  </g>
+</svg>

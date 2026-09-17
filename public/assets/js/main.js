@@ -1,5 +1,5 @@
 /* =========================================================================
-   5710 McCommas Blvd #101 — site behaviour
+   1614 Hubert Street — site behaviour
    ========================================================================= */
 (function () {
   'use strict';
@@ -7,13 +7,13 @@
   /* ---------------------------------------------------------------------
      ANALYTICS CONFIGURATION
      ---------------------------------------------------------------------
-     No measurement IDs were supplied for this property, so nothing is
-     loaded and no events are sent. Do NOT paste in another property's IDs.
+     The GA4 ID below was supplied in the build intake for this property.
+     CONFIRM it belongs to a GA4 property created for 1614 Hubert Street —
+     never run a listing on another listing's measurement ID, because the
+     two data sets cannot be separated afterwards.
 
-     To activate, fill in the values below with IDs issued for THIS
-     property or for the Mysti Stewart Group / Compass account:
+     Google Ads and Meta are inactive until IDs are added:
 
-       ga4        'G-XXXXXXXXXX'
        googleAds  'AW-XXXXXXXXX'
        adsLabels  { cta_showing: 'AW-XXXXXXXXX/xxxxxxxxxxxxxxxx', ... }
        metaPixel  'XXXXXXXXXXXXXXX'
@@ -21,7 +21,7 @@
      Conversions fire on real visitor actions only — never on page load.
   --------------------------------------------------------------------- */
   var ANALYTICS = {
-    ga4: '',
+    ga4: 'G-QGLE2JPPNS',
     googleAds: '',
     adsLabels: {},
     metaPixel: ''
@@ -55,7 +55,7 @@
   loadAnalytics();
 
   function track(name, params) {
-    var data = Object.assign({ event: name, property: '5710-mccommas-101', mls: '21312626' }, params || {});
+    var data = Object.assign({ event: name, property: '1614-hubert-st', mls: '21366713' }, params || {});
     window.dataLayer.push(data);
     if (typeof window.gtag === 'function') {
       window.gtag('event', name, data);
@@ -127,15 +127,16 @@
 
   /* --------------------------- Highlights ---------------------------- */
   var HIGHLIGHTS = [
-    ['Two bedrooms, two ensuite baths', 'Each bedroom has its own full bath, so there is no shared-bath compromise between the primary and the second bedroom.'],
-    ['A separate den, not a converted bedroom', 'A dedicated 9 × 10 den means a home office or studio without giving up the second bedroom.'],
-    ['Single-level, ground-floor living', 'Unit 101 sits on the first floor of a three-story building and is laid out on one level — no interior stairs.'],
-    ['A 28-foot open living space', 'Living, dining and kitchen run together across the main space, with windows on more than one wall.'],
-    ['Gas cooktop kitchen with a large island', 'Gas cooktop under a vented stainless hood, a full stainless appliance suite, tile backsplash and an island with seating.'],
-    ['Polished concrete floors', 'Continuous concrete flooring runs through the living areas — no carpet seams and nothing to refinish.'],
-    ['Two covered underground spaces', 'Two assigned, covered spaces in the building’s underground garage, plus a private covered balcony above street level.'],
-    ['Lock-and-leave ownership', 'The $457 monthly HOA covers building insurance, structural maintenance and management — no roof, yard or exterior punch list.']
+    ['A 1920 cottage, fully renovated', 'Craftsman-style trim, warm wood doors and herringbone-patterned floors carry the age of the house. The kitchen and the bath are new work.'],
+    ['Turnkey, and furnished', 'The home is offered fully furnished, so a second-home or investment buyer can take it as it stands. What conveys is set out in the contract.'],
+    ['A kitchen built to use every inch', 'A large island, abundant cabinetry, stainless appliances, an apron-front sink and brass hardware — open to the living room.'],
+    ['A bath worth the square footage', 'Glass-enclosed walk-in shower with a built-in bench, subway tile, graphic black-and-white tilework, black fixtures and brass accents, in a room that measures 8 × 15.'],
+    ['Storage designed in, not added on', 'A custom closet system and two closets in the bedroom, and built-in cabinetry through the living room and bath.'],
+    ['Solar panels installed in 2023', 'A 2023 addition to the house. Ownership, production and what transfers at closing are part of the due-diligence package.'],
+    ['No HOA, and a lot you can keep', 'No association, no assessment, no architectural committee — on a compact 0.053-acre lot with off-street parking on a concrete driveway and pad.'],
+    ['A proven short-term rental', 'The listing reports a successful run as a short-term rental. Permitting and the city rules that apply here are a buyer\u2019s own due diligence; no income figures are published.']
   ];
+
   var hlGrid = $('#hlGrid');
   if (hlGrid) {
     hlGrid.innerHTML = HIGHLIGHTS.map(function (h, i) {
@@ -146,15 +147,14 @@
   }
 
   /* ----------------------------- Places ------------------------------ */
+  /* Only destinations named in the property's own record are listed. Nothing
+     is added from general knowledge, and no distance or drive time is stated
+     unless it has been measured. */
   var PLACES = [
-    ['Greenville Avenue', 'The Lower Greenville restaurant, patio and nightlife corridor.'],
-    ['Mockingbird Station', 'Mixed-use center with shops, dining, a cinema and a DART light rail station.'],
-    ['Granada Theater', 'Historic live music venue on Greenville Avenue.'],
-    ['The M Streets', 'The adjacent residential district known for its Tudor-style homes.'],
-    ['Southern Methodist University', 'Campus just north of the neighborhood, in University Park.'],
-    ['White Rock Lake', 'East Dallas lake with a loop trail and surrounding park land.'],
-    ['US-75 · Central Expressway', 'Primary north-south freeway access, reached by way of Mockingbird Lane.']
+    ['Greenville Avenue', 'The East Dallas restaurant, bar and retail corridor the property\u2019s own directions run from.'],
+    ['Ross Avenue', 'The main east\u2013west route through this part of East Dallas, two blocks from the house.']
   ];
+
   var places = $('#places');
   if (places) {
     places.innerHTML = PLACES.map(function (p) {
@@ -164,46 +164,51 @@
 
   /* ----------------------------- Gallery ----------------------------- */
   var CATS = [
-    ['all', 'All 29'],
-    ['living', 'Living & Entry'],
-    ['kitchen', 'Kitchen & Dining'],
-    ['primary', 'Primary Suite'],
-    ['bedbath', 'Bedroom, Den & Baths'],
-    ['outside', 'Outdoor & Building']
+    ['all', 'All 13'],
+    ['living', 'Living'],
+    ['kitchen', 'Kitchen'],
+    ['bed', 'Bedroom'],
+    ['bath', 'Bath'],
+    ['outside', 'Exterior & Lot']
   ];
+
+  /* Photography for this listing has not been delivered. While this is true the
+     gallery renders labelled placeholder frames, so the page ships and every
+     slot says what it will hold. When the photographs arrive: drop
+     <slug>.jpg/.webp and <slug>-t.jpg/.webp into /assets/img/gallery/, set this
+     to false, and remove the note under the Gallery heading in index.html. */
+  var PHOTOS_PENDING = true;
+
 
   /* slug, category, short caption, full alt text */
   var PHOTOS = [
-    ['living-open-plan','living','Living room','Open living room looking through to the dining area and kitchen.'],
-    ['kitchen-island-wide','kitchen','Kitchen island','Kitchen island with seating beneath glass pendant lights.'],
-    ['primary-bedroom','primary','Primary bedroom','Primary bedroom with a window and floor-length drapery.'],
-    ['balcony','outside','Private balcony','Covered private balcony with a wrought iron railing.'],
-    ['kitchen-island','kitchen','Kitchen','Kitchen with island seating, stainless appliances and track lighting.'],
-    ['living-wide','living','Living room','Wide view of the living room, open to the kitchen beyond.'],
-    ['primary-bath-vanity','primary','Primary bath','Primary bath with a double vanity, freestanding tub and closet beyond.'],
-    ['exterior-front','outside','Building exterior','Street view of the Greenwood Flats building at 5710 McCommas Blvd.'],
-    ['living-media','living','Living room','Living room with a media wall and open sightlines.'],
-    ['kitchen-wide','kitchen','Kitchen','Wide view of the kitchen with island, range and window.'],
-    ['primary-bath-shower','primary','Primary bath','Freestanding soaking tub beside a glass-enclosed tiled shower.'],
-    ['bedroom-two','bedbath','Second bedroom','Second bedroom with two beds and a door to its ensuite bath.'],
-    ['living-windows','living','Living room','Living room with windows on two walls.'],
-    ['dining-door','kitchen','Dining area','Dining area beside windows and the door to the covered balcony.'],
-    ['primary-bedroom-ensuite','primary','Primary suite','Primary bedroom with the door to the ensuite bath open.'],
-    ['den-flex','bedbath','Den','The separate den — a flex room off the main hall.'],
-    ['kitchen-sink','kitchen','Kitchen','Kitchen island with undermount sink, looking toward the dining area.'],
-    ['dining','kitchen','Dining area','Dining area with seating for four and natural light.'],
-    ['primary-bedroom-closet','primary','Primary suite','Primary bedroom showing the ensuite bath and closet entries.'],
-    ['aerial-building','outside','Aerial view','Aerial view of the three-story Greenwood Flats building.'],
-    ['living-seating','living','Living room','Living room seating area with windows to the street.'],
-    ['kitchen-range','kitchen','Kitchen','Gas range with a vented stainless hood and tile backsplash.'],
-    ['bath-secondary','bedbath','Second bath','Second full bath with a tub-shower, tile surround and vanity.'],
-    ['entry-hall','living','Entry hall','Entry hall with polished concrete floors leading to the living area.'],
-    ['bedroom-two-alt','bedbath','Second bedroom','Second bedroom with a window and two beds.'],
-    ['den-flex-door','bedbath','Den','The den with its sliding barn door to the hallway.'],
-    ['entry-powder','bedbath','Powder bath','Powder bath off the entry with a pedestal sink.'],
-    ['community-walk','outside','Community','Landscaped walkway between the buildings at Greenwood Flats.'],
-    ['building-corridor','outside','Building corridor','Interior corridor leading to the front door of Unit 101.']
+    ['exterior-front','outside','Front elevation','The front elevation of the 1920 cottage at 1614 Hubert Street.'],
+    ['front-porch','outside','Front porch','The covered front porch at the entry.'],
+    ['living-room','living','Living room','The living room, with built-in cabinets and herringbone-patterned floors.'],
+    ['living-open-kitchen','living','Living to kitchen','The living room looking through to the open kitchen.'],
+    ['living-builtins','living','Built-in cabinetry','Built-in cabinetry in the living room.'],
+    ['kitchen-island','kitchen','Kitchen island','The kitchen island with seating and brass hardware.'],
+    ['kitchen-range','kitchen','Gas range','The gas range and cabinetry in the renovated kitchen.'],
+    ['kitchen-sink','kitchen','Apron-front sink','The apron-front sink and countertop workspace.'],
+    ['bedroom','bed','Bedroom','The bedroom, 15 by 15 feet.'],
+    ['bedroom-closets','bed','Closets','The bedroom closets and custom closet system.'],
+    ['bath-shower','bath','Walk-in shower','The glass-enclosed walk-in shower with a built-in bench and subway tile.'],
+    ['bath-vanity','bath','Vanity','The vanity, with black fixtures and brass accents.'],
+    ['lot-solar','outside','Lot and solar','The lot and the solar panels installed in 2023.']
   ];
+
+  /* A placeholder frame must never describe a photograph that does not exist,
+     so its alt text says what it is. */
+  function photoSrc(slug, thumb) {
+    if (PHOTOS_PENDING) return '/assets/img/gallery/placeholder/' + slug + '.svg';
+    return '/assets/img/gallery/' + slug + (thumb ? '-t' : '') + '.jpg';
+  }
+  function photoAlt(p) {
+    return PHOTOS_PENDING
+      ? 'Placeholder frame — photography of the ' + p[2].toLowerCase() + ' at 1614 Hubert Street is being prepared.'
+      : p[3];
+  }
+
 
   var galBar = $('#galBar'), galGrid = $('#galGrid');
 
@@ -213,11 +218,13 @@
     }).join('');
 
     galGrid.innerHTML = PHOTOS.map(function (p, i) {
-      return '<figure style="display:contents"><button class="gal__item" type="button" data-i="' + i + '" data-cat="' + p[1] + '" aria-label="Open photo ' + (i + 1) + ' of ' + PHOTOS.length + ': ' + p[3] + '">' +
-        '<picture>' +
-          '<source type="image/webp" srcset="/assets/img/gallery/' + p[0] + '-t.webp">' +
-          '<img src="/assets/img/gallery/' + p[0] + '-t.jpg" width="800" height="533" loading="' + (i < 4 ? 'eager' : 'lazy') + '" decoding="async" alt="' + p[3] + '">' +
-        '</picture>' +
+      var alt = photoAlt(p);
+      var img = '<img src="' + photoSrc(p[0], true) + '" width="800" height="533" loading="' +
+                (i < 4 ? 'eager' : 'lazy') + '" decoding="async" alt="' + alt + '">';
+      var media = PHOTOS_PENDING ? img
+        : '<picture><source type="image/webp" srcset="/assets/img/gallery/' + p[0] + '-t.webp">' + img + '</picture>';
+      return '<figure style="display:contents"><button class="gal__item" type="button" data-i="' + i + '" data-cat="' + p[1] + '" aria-label="Open photo ' + (i + 1) + ' of ' + PHOTOS.length + ': ' + alt + '">' +
+        media +
         '<figcaption>' + p[2] + '</figcaption>' +
       '</button></figure>';
     }).join('');
@@ -251,9 +258,10 @@
 
   function renderLb() {
     var p = PHOTOS[lbIndex];
-    lbImg.src = '/assets/img/gallery/' + p[0] + '.jpg';
-    lbImg.alt = p[3];
-    lbCap.innerHTML = '<b>' + p[2] + '</b>' + p[3];
+    lbImg.src = photoSrc(p[0], false);
+    lbImg.alt = photoAlt(p);
+    lbCap.innerHTML = '<b>' + p[2] + '</b>' +
+      (PHOTOS_PENDING ? 'Photography of this view is being prepared.' : p[3]);
     var list = visibleIdx();
     lbCount.textContent = (list.indexOf(lbIndex) + 1) + ' / ' + list.length;
   }
@@ -311,7 +319,11 @@
   }
 
   /* --------------------------- Tax estimator -------------------------- */
-  var RATE = 0.0222671; /* combined 2026 Dallas rate, 2.22671% */
+  /* Combined Dallas rate, 2.22671% per $100 — City of Dallas, Dallas ISD,
+     Dallas County, Dallas College and Parkland. No appraisal district record
+     was supplied for this parcel, so the rate and the jurisdictions should be
+     confirmed with the county before anyone relies on the output. */
+  var RATE = 0.0222671;
   var priceEl = $('#calcPrice'), yEl = $('#calcYear'), mEl = $('#calcMonth');
   var usd0 = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 
