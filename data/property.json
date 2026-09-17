@@ -1,334 +1,303 @@
 {
   "_meta": {
-    "purpose": "Single source of truth for 5710 McCommas Blvd #101. Used by the public page and the AI concierge.",
+    "purpose": "Single source of truth for 1614 Hubert Street, Dallas, TX 75206. Used by the public page and the AI concierge.",
     "sources": [
-      "NTREIS MLS Agent Full report, MLS# 21312626, prepared 09/14/2026",
-      "Dallas Central Appraisal District (DCAD) Residential Account Detail #00C27110000300101, retrieved 04/28/2026"
+      "NTREIS MLS Agent Full report, MLS# 21366713, prepared 09/17/2026"
+    ],
+    "sourcesNotSupplied": [
+      "Dallas Central Appraisal District account detail for parcel 00000155968000100",
+      "Itemised property tax bill",
+      "Realist / CoreLogic report",
+      "Sale comparables packet",
+      "Lease comparables packet",
+      "Renovation / upgrade cost schedule",
+      "Seller's disclosure notice",
+      "Survey",
+      "Solar system documentation (ownership, lease or PPA, production, warranty)",
+      "Short-term rental permit, history and income records",
+      "Floor plan, Matterport tour and property video",
+      "Listing photography"
     ],
     "confidentialExcluded": [
-      "Owner name and owner mailing address (DCAD)",
+      "Owner name / owner of record (MLS: 'See Tax Records')",
       "Keybox number and keybox type (MLS)",
       "Private agent remarks (MLS)",
-      "Agent-only showing service phone number (MLS)"
+      "Agent-only showing service phone number and showing platform login (MLS)",
+      "Seller type and any seller motivation or negotiating position"
     ],
-    "lastReviewed": "2026-09-14"
+    "lastReviewed": "2026-09-17"
   },
   "identity": {
-    "streetAddress": "5710 McCommas Blvd, Unit 101",
+    "streetAddress": "1614 Hubert Street",
     "city": "Dallas",
     "state": "TX",
     "stateName": "Texas",
     "postalCode": "75206",
+    "postalCodePlus4": "75206-7904",
     "county": "Dallas",
-    "shortName": "5710 McCommas #101",
-    "displayName": "5710 McCommas Blvd, Unit 101",
-    "community": "Greenwood Flats Condominiums",
-    "neighborhood": "Lower Greenville / M Streets, East Dallas",
-    "buildingLabel": "Building 3, Unit 101",
-    "mapQuery": "5710 McCommas Blvd Unit 101, Dallas, TX 75206",
+    "shortName": "1614 Hubert St",
+    "displayName": "1614 Hubert Street",
+    "community": "Ross Avenue Heights",
+    "subdivisionMls": "Ross Ave Heights Add",
+    "neighborhood": "East Dallas, off the Greenville Avenue and Ross Avenue corridors",
+    "mapQuery": "1614 Hubert Street, Dallas, TX 75206",
     "_geoNote": "[VERIFY] No verified latitude/longitude was supplied. The map and structured data use the postal address rather than coordinates so nothing is published that has not been verified."
   },
   "listing": {
     "status": "Active",
-    "mlsNumber": "21312626",
+    "mlsNumber": "21366713",
     "mlsSource": "NTREIS",
-    "listPrice": 450000,
-    "originalListPrice": 450000,
-    "pricePerSqFt": 277.09,
-    "listDate": "2026-06-26",
-    "expirationDate": "2026-12-31",
-    "daysOnMarket": 59,
-    "cumulativeDaysOnMarket": 109,
-    "recentActivity": "Back on market 09/04/2026",
-    "listingTerms": "Cash",
+    "listPrice": 485000,
+    "originalListPrice": 485000,
+    "pricePerSqFt": 651.88,
+    "listDate": "2026-08-22",
+    "expirationDate": "2027-02-20",
+    "daysOnMarket": 26,
+    "cumulativeDaysOnMarket": 26,
+    "listingTerms": "Cash, Conventional",
     "possession": "Closing/Funding",
     "listType": "Exclusive Right To Sell",
-    "alsoForLease": false
+    "alsoForLease": false,
+    "furnished": "Offered fully furnished per the listing's public remarks.",
+    "furnishedNote": "[VERIFY] No furniture inventory or exclusion list was supplied. What conveys must be set out in the contract."
   },
   "structure": {
     "propertyType": "Residential",
-    "propertySubType": "Condominium",
-    "housingType": "Condo/Townhome",
-    "styleOfHouse": "Contemporary/Modern",
-    "bedrooms": 2,
-    "bathroomsFull": 2,
-    "bathroomsHalf": 1,
-    "bathroomsTotal": 3,
-    "squareFeet": 1624,
+    "propertySubType": "Single Family",
+    "housingType": "Single Detached",
+    "styleOfHouse": "Contemporary/Modern, Craftsman",
+    "bedrooms": 1,
+    "bathroomsFull": 1,
+    "bathroomsHalf": 0,
+    "bathroomsTotal": 1,
+    "livingAreas": 1,
+    "diningAreas": 1,
+    "squareFeet": 744,
     "squareFeetSource": "Assessor",
-    "yearBuilt": 2016,
+    "yearBuilt": 1920,
     "yearBuiltSource": "Assessor",
-    "effectiveYearBuilt": 2016,
-    "storiesInUnit": 1,
-    "buildingStories": 3,
-    "floorLocation": 1,
-    "propertyAttached": true,
+    "yearBuiltCondition": "Preowned",
+    "levels": 1,
+    "propertyAttached": false,
     "fireplaces": 0,
     "pool": false,
-    "foundation": "Slab",
-    "construction": "Stucco, Wood",
-    "exteriorWallMaterial": "Stucco",
+    "foundation": "Pillar/Post/Pier",
+    "construction": "Frame, Siding",
     "roof": "Composition",
-    "roofNoteDcad": "DCAD records roof type as FLAT with COMP ROLL material",
-    "flooring": "Concrete",
-    "heating": "Central, Electric",
-    "cooling": "Central Air, Electric",
-    "constructionTypeDcad": "Frame",
-    "buildingClassDcad": "Condominium",
-    "desirabilityDcad": "Very Good",
-    "depreciationDcad": "3%",
-    "percentCompleteDcad": "100%"
+    "flooring": "Luxury Vinyl Plank",
+    "flooringNote": "The public remarks describe a herringbone-patterned floor; the MLS records the material as luxury vinyl plank.",
+    "heating": "Central",
+    "cooling": "Central Air",
+    "basement": false,
+    "renovationNote": "The public remarks describe the home as fully renovated, including the kitchen and the bath. [VERIFY] No renovation date, cost schedule or permit record was supplied."
   },
   "rooms": [
     {
-      "name": "Primary Bedroom",
-      "dimensions": "13 x 16",
-      "level": 1
-    },
-    {
-      "name": "Second Bedroom",
-      "dimensions": "13 x 15",
-      "level": 1
-    },
-    {
       "name": "Living Room",
-      "dimensions": "28 x 13",
-      "level": 1
+      "dimensions": "20 x 15",
+      "level": 1,
+      "features": "Built-in Cabinets"
     },
     {
-      "name": "Kitchen",
-      "dimensions": "9 x 13",
-      "level": 1
+      "name": "Primary Bedroom",
+      "dimensions": "15 x 15",
+      "level": 1,
+      "features": "Custom Closet System"
     },
     {
-      "name": "Den / Flex Room",
-      "dimensions": "9 x 10",
-      "level": 1
+      "name": "Primary Bath",
+      "dimensions": "8 x 15",
+      "level": 1,
+      "features": "Built-in Cabinets"
     }
   ],
   "features": {
     "appliances": [
+      "Built-in Gas Range",
       "Dishwasher",
       "Disposal",
-      "Electric Oven",
       "Electric Water Heater",
       "Gas Cooktop",
+      "Gas Oven",
+      "Gas Range",
+      "Gas Water Heater",
+      "Ice Maker",
+      "Microwave",
+      "Oven-Convection",
+      "Oven-Double",
+      "Plumbed For Gas in Kitchen",
       "Refrigerator",
-      "Vented Exhaust Fan"
+      "Vented Exhaust Fan",
+      "Washer",
+      "Water Filter",
+      "Water Purifier",
+      "Water Softener"
     ],
+    "appliancesNote": "[VERIFY] The MLS lists both an electric and a gas water heater, and several overlapping cooking appliances, for a 744 sq ft house. The list should be reconciled against the home and the contract.",
     "interior": [
+      "Built-in Features",
       "Cable TV Available",
       "Decorative Lighting",
+      "Double Vanity",
+      "Eat-in Kitchen",
       "Flat Screen Wiring",
       "High Speed Internet Available",
-      "Other"
-    ],
-    "exterior": [
-      "Balcony",
-      "Rain Gutters",
-      "Other"
+      "Kitchen Island",
+      "Open Floorplan",
+      "Paneling",
+      "Pantry",
+      "Smart Home System",
+      "Sound System Wiring"
     ],
     "security": [
-      "Fire Sprinkler System",
-      "Firewall(s)",
-      "Smoke Detector(s)",
-      "Wireless"
+      "Security System"
     ],
-    "lotDescription": [
-      "Few Trees",
-      "Landscaped",
-      "Sprinkler System"
-    ],
-    "fence": "Wood, Wrought Iron",
+    "laundry": "On Site",
     "utilities": "City Sewer, City Water",
-    "easements": "None",
     "smartHomeAppPowered": false,
     "handicapAmenities": false,
-    "adultCommunity": false
+    "adultCommunity": false,
+    "surveillanceDisclosure": "The seller has disclosed that audio and video surveillance devices are present at the property, and consent for visitors to be recorded by audio and video.",
+    "fromPublicRemarks": [
+      "Herringbone-patterned floors, Craftsman-style trim and wood doors",
+      "Open living and kitchen space",
+      "Renovated kitchen with abundant cabinetry, a large island, stainless steel appliances, an apron-front sink and brass hardware",
+      "Renovated bath with a glass-enclosed walk-in shower, subway tile, black-and-white tilework, a built-in shower bench, black fixtures and brass accents",
+      "Bedroom with two closets",
+      "Built-in cabinetry throughout",
+      "Welcoming front porch",
+      "Compact, low-maintenance lot",
+      "Solar panels installed in 2023"
+    ]
   },
   "parking": {
-    "garageSpaces": 2,
-    "coveredSpaces": 2,
+    "garageSpaces": 0,
+    "coveredSpaces": 0,
     "carportSpaces": 0,
-    "attachedGarage": false,
+    "garage": false,
     "description": [
-      "Assigned",
-      "Common",
-      "Covered",
-      "Garage Door Opener",
-      "Other",
-      "Underground"
+      "Additional Parking",
+      "Concrete",
+      "Direct Access",
+      "Driveway",
+      "Parking Pad",
+      "Paved"
     ],
-    "summary": "Two assigned, covered parking spaces in the building's underground garage."
+    "summary": "Off-street parking on a paved concrete driveway and parking pad. There is no garage and no carport.",
+    "note": "[VERIFY] The MLS does not state how many cars the driveway and parking pad hold."
   },
   "land": {
-    "acresOfRegime": 0.957,
-    "squareFeetOfRegime": 41686,
-    "lotSizeRange": ".5 to < 1 Acre",
-    "commonElementInterestPct": 2.72,
+    "acres": 0.053,
+    "squareFeetApprox": 2309,
+    "squareFeetNote": "0.053 acres as recorded in the MLS, which is about 2,309 sq ft. The acreage is rounded to three decimals at source, so the square-foot figure is approximate. [VERIFY] against a survey.",
+    "lotSizeRange": "Less Than .5 Acre (not Zero)",
+    "lotDimensions": "[VERIFY] Not stated in the MLS.",
+    "lot": "1",
+    "block": "O1480",
     "subdividable": false,
-    "note": "The 0.957-acre / 41,686 sq ft figure is the land of the entire Greenwood Flats condominium regime, held in common — it is not a private lot conveyed with Unit 101. Unit 101 carries a 2.72% undivided common-element interest."
+    "multiParcel": false
   },
   "hoa": {
-    "required": "Mandatory",
-    "managementCompany": "Guardian Association Management",
-    "managementPhone": "972-458-2200",
-    "duesAmount": 457,
-    "duesFrequency": "Monthly",
-    "includes": [
-      "Full Use of Facilities",
-      "Insurance",
-      "Maintenance Structure",
-      "Management Fees"
-    ],
-    "amenities": "[VERIFY] The MLS lists 'Full Use of Facilities' but does not enumerate specific community amenities. No pool, fitness center, or other amenity should be advertised until confirmed against the HOA documents.",
-    "documentsReviewed": false,
-    "rulesNote": "[VERIFY] HOA governing documents, budget, reserves, rental restrictions, pet rules and architectural restrictions were not provided and have not been reviewed."
+    "required": "None",
+    "duesAmount": 0,
+    "note": "The MLS records HOA as None. There is no association, no monthly assessment and no association rules governing this property."
   },
   "taxes": {
-    "parcelId": "00C27110000300101",
-    "legalDescription": "GREENWOOD FLATS CONDOMINIUMS, BLK A/2896, LT 1, ACS 0.957, BLDG 3, UNIT 101, CE 2.72%",
+    "parcelId": "00000155968000100",
+    "legalDescription": "ROSS AVE HEIGHTS BLK O/1480 S PT LT 1",
     "appraisalDistrict": "Dallas Central Appraisal District",
-    "taxYear": 2026,
-    "valuesStatus": "2026 Proposed Values",
-    "improvementValue": 427640,
-    "landValue": 62360,
-    "marketValue": 490000,
-    "exemptions": "None currently on record",
-    "currentAnnualTax": 10910.88,
-    "currentAnnualTaxRounded": 10911,
-    "combinedRatePer100": 2.22671,
+    "unexemptAnnualTax": 7074,
+    "unexemptAnnualTaxSource": "MLS 'Unexmpt Tx' field, MLS# 21366713",
+    "unexemptMonthly": 589.5,
     "combinedRatePct": 2.22671,
-    "jurisdictions": [
-      {
-        "name": "City of Dallas",
-        "ratePer100": 0.6988,
-        "amount": 3424.12
-      },
-      {
-        "name": "Dallas ISD",
-        "ratePer100": 0.993835,
-        "amount": 4869.79
-      },
-      {
-        "name": "Dallas County",
-        "ratePer100": 0.2155,
-        "amount": 1055.95
-      },
-      {
-        "name": "Dallas College",
-        "ratePer100": 0.106575,
-        "amount": 522.22
-      },
-      {
-        "name": "Parkland Hospital",
-        "ratePer100": 0.212,
-        "amount": 1038.8
-      }
-    ],
+    "combinedRateSource": "[VERIFY] Combined 2026 Dallas rate (City of Dallas 0.6988 + Dallas ISD 0.993835 + Dallas County 0.2155 + Dallas College 0.106575 + Parkland Hospital 0.212 per $100). These are jurisdiction-level rates for a City of Dallas / Dallas ISD address; no DCAD record or tax bill was supplied for THIS parcel, so both the rate and the jurisdictions must be confirmed before they are relied on.",
+    "estimatedTaxAtListPrice": 10799.54,
+    "estimatedTaxAtListPriceMonthly": 900,
+    "impliedCurrentTaxableValue": 317688,
+    "impliedCurrentTaxableValueNote": "[VERIFY] Derived, not supplied: $7,074 ÷ 2.22671% implies a taxable value near $317,700. No DCAD assessed value was provided for this parcel.",
+    "exemptions": "[VERIFY] Not stated. The MLS figure is described as the unexempt amount.",
     "specialAssessments": "None disclosed. Public Improvement District (PID): No. Municipal Utility District (MUD): No.",
     "melloRoos": "Not applicable — Mello-Roos is a California mechanism and does not exist in Texas.",
     "notes": [
-      "The $10,910.88 figure is DCAD's 2026 estimate on a $490,000 taxable value with no exemptions applied. It reconciles exactly: $490,000 x 2.22671% = $10,910.88.",
-      "Texas has no California-style Proposition 13 assessment cap. Values are reappraised toward market, so a buyer's assessment may differ from the current figure.",
-      "2026 values are shown by DCAD as proposed and can change through the appraisal review process.",
-      "A buyer who occupies the home as a principal residence may be eligible to file a Texas homestead exemption, which would reduce the taxable value. Eligibility and amounts must be confirmed with DCAD."
+      "The single most important tax point for a buyer: the $7,074 figure reflects the current taxable value, not the list price. Texas has no California-style Proposition 13 cap, and values are reappraised toward market. At the $485,000 list price the same combined rate produces roughly $10,800 a year — about $900 a month — which is an estimate, not a quote.",
+      "A buyer who occupies the home as a principal residence may be eligible to file a Texas homestead exemption, which would reduce the taxable value. Eligibility and amounts must be confirmed with DCAD. A buyer using the home as a short-term rental or second home would not qualify.",
+      "Assessed values are reviewed annually and can change through the appraisal review process."
     ]
   },
   "specialItems": {
-    "solar": "None indicated in the MLS or DCAD records for this unit.",
-    "battery": "None indicated.",
-    "evCharger": "[VERIFY] Not listed in the MLS. Confirm whether any EV charging is available in the underground garage.",
-    "waterFiltration": "Not listed.",
-    "smartHome": "The MLS records Smart Home App/Powered as No. The unit is listed with Flat Screen Wiring, Decorative Lighting, Cable TV Available and High Speed Internet Available.",
-    "includedAppliances": "The MLS appliance list includes a refrigerator. [VERIFY] Confirm in the contract which appliances convey.",
-    "leasedEquipment": "None disclosed.",
-    "exclusions": "[VERIFY] No furniture or fixture exclusions were provided.",
-    "basement": "[VERIFY] The MLS marks Basement as Yes while DCAD records Basement as NONE. This most likely refers to the building's below-grade parking level rather than unit basement space."
+    "solar": "Solar panels were installed in 2023 according to the listing's public remarks.",
+    "solarVerify": "[VERIFY] Nothing was supplied on whether the system is owned, leased, financed or on a power purchase agreement; on system size, production, warranty or transferability; or on the net-metering / buyback arrangement with the electric provider. A leased or financed system changes what a buyer assumes at closing and can affect financing, so this must be documented before it is described on the site as a benefit.",
+    "shortTermRental": "The public remarks state the property has been a successful short-term rental investment and is offered fully furnished.",
+    "shortTermRentalVerify": "[VERIFY] No permit, registration, occupancy history or income figures were supplied, and no verification was made of the City of Dallas rules that apply to short-term rentals at this address. No income, occupancy or yield figure may be published or quoted, and no representation may be made that short-term rental use is permitted or will remain permitted.",
+    "waterTreatment": "The appliance list includes a water filter, water purifier and water softener. [VERIFY] Whether these convey, and whether any are leased, is not documented.",
+    "smartHome": "The MLS lists a Smart Home System and Sound System Wiring among interior features, while the Smart Home App/Powered field is marked No. [VERIFY] What the system includes and what conveys is not documented.",
+    "leasedEquipment": "[VERIFY] None disclosed, but solar and water-treatment equipment were not confirmed as owned.",
+    "foundationNote": "Pillar/post/pier foundation on a 1920 frame house. Normal for the era and the neighborhood; a buyer should still budget for a structural and foundation inspection during the option period.",
+    "surveillance": "The seller discloses audio and video surveillance devices at the property. Visitors should assume they are recorded."
   },
   "schools": {
     "district": "Dallas ISD",
-    "elementary": "Mockingbird Elementary School",
-    "middle": "Long Middle School",
-    "high": "Woodrow Wilson High School",
+    "elementary": "Geneva Heights Elementary School",
+    "middle": "H.W. Lang Middle School",
+    "high": "North Dallas High School",
     "ratings": "Not provided — no ratings are published on this site.",
-    "disclaimer": "School assignments, boundaries, ratings, enrollment eligibility, and transfer policies may change. Buyers should independently verify school information directly with Dallas ISD."
+    "disclaimer": "School assignments, boundaries, ratings, enrollment eligibility and transfer policies may change. Buyers should independently verify school information directly with Dallas ISD."
   },
   "neighborhood": {
-    "summary": "Greenwood Flats sits on McCommas Blvd in East Dallas, between Lower Greenville and the M Streets, close to Mockingbird Station and Greenville Avenue.",
-    "drivingDirections": "East on Mockingbird from US-75. Right on Greenville Ave. Left on McCommas Blvd.",
+    "summary": "1614 Hubert Street sits in Ross Avenue Heights in East Dallas, a short turn off the Greenville Avenue and Ross Avenue corridors.",
+    "drivingDirections": "From Greenville Avenue, head east on Ross Avenue about two blocks. Turn right on Hubert Street. The property is the second house on the left.",
     "destinations": [
       {
         "name": "Greenville Avenue",
-        "note": "The Lower Greenville restaurant, patio and nightlife corridor."
+        "note": "The East Dallas restaurant, bar and retail corridor the property's directions run from."
       },
       {
-        "name": "Mockingbird Station",
-        "note": "Mixed-use center with shops, dining, a cinema, and a DART light rail station."
-      },
-      {
-        "name": "Granada Theater",
-        "note": "Historic live music venue on Greenville Avenue."
-      },
-      {
-        "name": "Southern Methodist University (SMU)",
-        "note": "University campus just north in University Park."
-      },
-      {
-        "name": "White Rock Lake",
-        "note": "East Dallas lake with a loop trail and park land."
-      },
-      {
-        "name": "The M Streets",
-        "note": "Adjacent residential district known for its Tudor-style homes."
-      },
-      {
-        "name": "US-75 (Central Expressway)",
-        "note": "Primary north-south freeway access, reached via Mockingbird Lane."
+        "name": "Ross Avenue",
+        "note": "The main east-west route through this part of East Dallas, two blocks from the house."
       }
     ],
-    "destinationsNote": "Destinations are drawn from the listing's public remarks and driving directions. Travel times vary with traffic and route and are not stated on this site.",
+    "destinationsNote": "[VERIFY] Only destinations named in the listing's own driving directions are published. A fuller, verified list of nearby destinations — with no drive times or distances unless they are measured — should be supplied before the section is expanded.",
     "developmentPlans": "[VERIFY] No known or pending development plans were provided.",
     "distancesVerified": false
   },
   "highlights": [
     {
-      "title": "Two bedrooms, two ensuite baths",
-      "body": "Each bedroom has its own full bath, so there is no shared-bath compromise between the primary and the second bedroom."
+      "title": "A 1920 cottage, fully renovated",
+      "body": "Craftsman-style trim, wood doors and herringbone-patterned floors carry the age of the house; the kitchen and bath are new work."
     },
     {
-      "title": "A separate den, not a converted bedroom",
-      "body": "A dedicated 9 x 10 den means a home office or studio without giving up the second bedroom."
+      "title": "Turnkey, and furnished",
+      "body": "The home is offered fully furnished, so a second-home or investment buyer can take it as it stands. What conveys is set out in the contract."
     },
     {
-      "title": "Single-level, ground-floor living",
-      "body": "Unit 101 is on the first floor of a three-story building, laid out on one level with no interior stairs."
+      "title": "A kitchen built to use every inch",
+      "body": "Large island, abundant cabinetry, stainless appliances, an apron-front sink, brass hardware and a gas range in an open plan with the living room."
     },
     {
-      "title": "A 28-foot open living space",
-      "body": "Living, dining and kitchen run together across the main space, with windows on multiple sides."
+      "title": "A bath worth the square footage",
+      "body": "Glass-enclosed walk-in shower with a built-in bench, subway tile, graphic black-and-white tilework, black fixtures and brass accents — in a room that measures 8 by 15."
     },
     {
-      "title": "Gas cooktop kitchen with a large island",
-      "body": "Gas cooktop under a vented stainless hood, full stainless appliance suite, tile backsplash, and an oversized island with seating."
+      "title": "Storage designed in, not added on",
+      "body": "A custom closet system in the bedroom, two closets, and built-in cabinetry through the living room and bath."
     },
     {
-      "title": "Polished concrete floors throughout",
-      "body": "Durable, continuous concrete flooring runs through the living areas — no carpet seams, no refinishing."
+      "title": "Solar panels installed in 2023",
+      "body": "A 2023 addition to the house. Ownership, production and transfer terms are part of the due-diligence package."
     },
     {
-      "title": "Two covered underground parking spaces",
-      "body": "Two assigned, covered spaces in the building's secured underground garage, plus a private covered balcony above street level."
+      "title": "No HOA, and a lot you can actually maintain",
+      "body": "No association, no assessment, no architectural committee — on a compact 0.053-acre lot with off-street parking on a concrete driveway and pad."
     },
     {
-      "title": "Lock-and-leave ownership",
-      "body": "The $457 monthly HOA covers building insurance, structural maintenance and management, so there is no roof, yard or exterior punch list."
+      "title": "A proven short-term rental",
+      "body": "The listing reports a successful run as a short-term rental. Permitting and the rules that apply at this address are a buyer's own due diligence — no income figures are published here."
     }
   ],
   "marketing": {
-    "headline": "Live the Lower Greenville lifestyle — without the upkeep",
-    "pullQuote": "Lock it, leave it, and let the neighborhood do the rest.",
-    "mlsPublicRemarksSource": "NTREIS MLS# 21312626 public remarks, written by the listing agent."
+    "headline": "Small, and not one bit compromised",
+    "pullQuote": "744 square feet, renovated to the last inch, on a lot you can keep with a Saturday morning.",
+    "mlsPublicRemarksSource": "NTREIS MLS# 21366713 public remarks, written by the listing agent."
   },
   "agent": {
     "name": "Mysti Stewart",
@@ -344,17 +313,32 @@
     "brokeragePhone": "214-814-8100",
     "brokerageAddress": "6220 Gaston Avenue, Suite 200, Dallas, Texas 75214"
   },
+  "showing": {
+    "public": "By appointment through the listing agent. Call or text Mysti Stewart at 214-213-3537 or use the request form on this page.",
+    "note": "Agent-only showing service details, the showing platform and keybox information are deliberately excluded from this file and from the site."
+  },
+  "analytics": {
+    "ga4MeasurementId": "G-QGLE2JPPNS",
+    "ga4Note": "[VERIFY] Supplied in the build intake. Confirm this measurement ID belongs to a GA4 property created for 1614 Hubert Street and is not another listing's ID before relying on the data.",
+    "googleAds": "",
+    "metaPixel": ""
+  },
   "notProvided": [
-    "Upgrade schedule / improvement cost documentation",
-    "HOA governing documents, budget, reserve study and resale certificate",
-    "Sale comparables",
-    "Lease comparables",
+    "Listing photography, hero image and social card artwork",
     "Floor plan",
     "Matterport or other virtual tour",
     "Property video",
+    "Renovation / upgrade cost schedule",
+    "Itemised property tax bill and DCAD account detail",
+    "Realist / CoreLogic report",
+    "Sale comparables",
+    "Lease comparables",
+    "Solar system documentation",
+    "Short-term rental permit, history and income records",
     "Seller's disclosure notice",
     "Survey",
-    "Analytics measurement IDs",
-    "Online scheduling / booking links"
+    "Online scheduling / booking links",
+    "Open house date and time",
+    "Production domain"
   ]
 }
