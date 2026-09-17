@@ -384,7 +384,7 @@
   },
   "analytics": {
     "ga4MeasurementId": "G-QGLE2JPPNS",
-    "ga4Note": "[VERIFY] Supplied in the build intake. Confirm this measurement ID belongs to a GA4 property created for 1614 Hubert Street and is not another listing's ID before relying on the data.",
+    "ga4Note": "Confirmed by Mysti Stewart on 2026-09-17 as this listing's own measurement ID. Installed as Google's gtag.js snippet in the <head> of public/index.html; main.js does not configure GA4, so there is no double-counting.",
     "googleAds": "",
     "metaPixel": ""
   },

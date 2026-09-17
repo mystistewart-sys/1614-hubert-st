@@ -95,8 +95,15 @@ with the real production domain in:
 - `public/sitemap.xml` — the `<loc>` value
 
 ```bash
-grep -rn '1614-hubert-st.netlify.app' public/
+node tools/set-domain.mjs --check              # report, change nothing
+node tools/set-domain.mjs 1614hubertstreet.com # rewrite all 17 references
 ```
+
+There are 17 references across the three files — the canonical link, the
+`og:`/`twitter:` tags, four JSON-LD fields, the `Sitemap:` line and the
+sitemap `<loc>`. Missing one is the classic single-property-site bug: the site
+goes live, every share card still points at the staging host, and nobody
+notices until someone shares the listing.
 
 ---
 
@@ -108,10 +115,12 @@ GA4 is live with the measurement ID supplied at build time:
 var ANALYTICS = { ga4: 'G-QGLE2JPPNS', googleAds: '', adsLabels: {}, metaPixel: '' };
 ```
 
-**Confirm that ID belongs to a GA4 property created for 1614 Hubert Street.**
-Running two listings on one measurement ID mixes data that cannot be separated
-afterwards. GA4's "data collection isn't active" banner lags up to 48 hours —
-verify with the Realtime report and a `/g/collect` 204 instead of waiting on it.
+`G-QGLE2JPPNS` is confirmed as this listing's own property, and it lives in the
+gtag.js snippet in the `<head>` of `index.html` — nowhere else. Running two
+listings on one measurement ID mixes data that cannot be separated afterwards.
+
+GA4's "data collection isn't active" banner lags up to 48 hours — verify with
+the Realtime report and a `/g/collect` 204 instead of waiting on it.
 
 Events already instrumented: `cta_showing`, `cta_ask`, `cta_gallery`,
 `contact_call`, `contact_email`, `gallery_open`, `gallery_filter`,

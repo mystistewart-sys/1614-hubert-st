@@ -12,9 +12,9 @@
      gtag('config', ...) calls for the same property double-count every
      pageview. To change the measurement ID, edit the snippet in the HTML.
 
-     CONFIRM that ID belongs to a GA4 property created for 1614 Hubert Street.
-     Never run a listing on another listing's measurement ID — the two data
-     sets cannot be separated afterwards.
+     G-QGLE2JPPNS is confirmed as this listing's own property. Never run a
+     listing on another listing's measurement ID — the two data sets cannot be
+     separated afterwards.
 
      Google Ads and Meta are inactive until IDs are added:
 
