@@ -118,10 +118,22 @@ def main():
 
     if args.hero:
         him = load(args.hero)
+        # Only emit a hero width the source can actually fill. Writing
+        # hero-xl at 1024px and then describing it as 2048w in the srcset
+        # makes the browser download a file that cannot deliver what the
+        # descriptor promises.
+        hero_written, seen_w = [], set()
         for name, w in HERO_W.items():
-            _, small = emit(him, f'hero-{name}', w, HERO)
-            if small:
-                upscaled.append(f'hero-{name}: source only {him.width}px wide')
+            eff = min(w, him.width)          # never upscale, never waste source
+            if eff in seen_w:
+                upscaled.append(f'hero-{name} skipped: source is only {him.width}px wide')
+                continue
+            actual, _ = emit(him, f'hero-{name}', eff, HERO)
+            seen_w.add(actual)
+            hero_written.append((name, actual))
+        print('  hero widths written: ' +
+              ', '.join(f'{n}={w}w' for n, w in hero_written))
+        print('  -> the hero srcset in index.html must list exactly these widths')
         card = ImageOps.fit(him, OG_SIZE, Image.LANCZOS, centering=(0.5, 0.45))
         write(card, ROOT / 'public/assets/img/og-card.jpg')
         print(f'  hero + og-card         {him.width}x{him.height}')

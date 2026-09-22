@@ -34,27 +34,26 @@ netlify.toml                publish/functions/headers config
 
 ## Photography
 
-Sixteen photographs are live across six filters, from 20 files delivered.
+Fifteen photographs across five filters, from one consistent shoot.
 `tools/photo-map.txt` records which source became which slug and
 `tools/photos.py` regenerates every web copy from it:
 
 ```bash
 pip install Pillow                       # local authoring only — not a site dependency
 python3 tools/photos.py --map tools/photo-map.txt \
-        --hero assets-source/photos-original/DSC02278.jpg
+        --hero assets-source/photos-original/1.jpg
 ```
 
-It writes `<slug>.jpg/.webp` at 1800w and `<slug>-t.jpg/.webp` at 800w for each
-slot, the three hero widths, and the 1200 × 630 social card. It applies and
-strips EXIF orientation, never upscales, and refuses to run if a slug in the map
-is missing from `main.js` or if a slot has no source — a listing page that
-silently drops a photo is worse than a failed run.
+It writes `<slug>.jpg/.webp` and `<slug>-t.jpg/.webp` at 800w for each slot,
+the hero widths, and the 1200 × 630 social card. It applies and strips EXIF
+orientation, never upscales, caps hero widths at the source width, and refuses
+to run if a slug in the map is missing from `main.js` or if a slot has no
+source — a listing page that silently drops a photo is worse than a failed run.
 
-**Twelve of the sixteen serve below 1800px** because only six camera originals
-were delivered; the rest are MLS exports. The kitchen is the strongest room in
-the house and currently the softest set on the page. See
-`assets-source/README.md` for which files to ask the photographer for, then
-re-run the tool — nothing else changes.
+**Every delivered file is 1024px or smaller**, so no slot reaches the 1800px
+the layout can use, and the hero has two widths instead of three. See
+`assets-source/README.md` for what to request from the photographer, and for
+the 4000–6000px originals kept as an alternative hero.
 
 `PHOTOS_PENDING` in `main.js` is the switch back to labelled placeholder frames
 if a future listing ships before its photography does.

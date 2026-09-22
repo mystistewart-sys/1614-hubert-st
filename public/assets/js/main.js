@@ -170,9 +170,8 @@
 
   /* ----------------------------- Gallery ----------------------------- */
   var CATS = [
-    ['all', 'All 16'],
-    ['living', 'Living'],
-    ['kitchen', 'Kitchen & Dining'],
+    ['all', 'All 15'],
+    ['inside', 'Living & Kitchen'],
     ['bed', 'Bedroom'],
     ['bath', 'Bath'],
     ['outside', 'Exterior']
@@ -188,24 +187,22 @@
 
 
   /* slug, category, short caption, full alt text */
-  /* slug, category, short caption, full alt text */
   var PHOTOS = [
-    ['exterior-front','outside','Front elevation','The 1920 Craftsman cottage at 1614 Hubert Street, with its covered front porch, blue front door and window boxes.'],
-    ['living-to-kitchen','living','Living to kitchen','The open living room looking through to the kitchen and island dining beyond.'],
-    ['living-entry','living','From the entry','The living room seen from the front door, under a tray ceiling, with herringbone floors running through.'],
-    ['living-seating','living','Living room','The living room seating area, open to the kitchen beyond.'],
-    ['living-desk','living','Desk nook','A desk set under the front window, beside the living room seating.'],
-    ['kitchen-wide','kitchen','Kitchen','The kitchen, with island dining beneath a chandelier and a door to the side of the house.'],
-    ['kitchen-range-wall','kitchen','Range wall','Cabinetry to the ceiling along the range wall, with the apron-front sink beyond.'],
-    ['kitchen-island','kitchen','Island','The kitchen island in quartz, with brass cup pulls.'],
-    ['kitchen-range','kitchen','Gas range','The gas range with double ovens, flanked by turned cabinet legs.'],
-    ['kitchen-sink','kitchen','Apron-front sink','The stainless apron-front sink beneath the kitchen window.'],
-    ['kitchen-to-rooms','kitchen','Kitchen to bath and bedroom','The kitchen looking toward the bath and bedroom doors, past a built-in niche.'],
-    ['bedroom','bed','Bedroom','The bedroom, with built-in cabinetry, open shelving and its closet doors.'],
+    ['exterior-front','outside','Front elevation','The 1920 Craftsman cottage at 1614 Hubert Street, with its scalloped porch trim, blue front door and window boxes.'],
+    ['exterior-drive','outside','Driveway','The house from the side, along the concrete driveway and parking pad.'],
+    ['living-to-kitchen','inside','Living to kitchen','The living room under a tray ceiling, open through to the kitchen and island dining beyond.'],
+    ['kitchen-wide','inside','Kitchen','The kitchen, with island dining beneath a chandelier.'],
+    ['kitchen-island','inside','Island and sink','The quartz island, with the range wall and apron-front sink beyond.'],
+    ['kitchen-range-wall','inside','Range wall','Cabinetry to the ceiling along the range wall.'],
+    ['kitchen-range','inside','Gas range','The gas range with double ovens, flanked by turned cabinet legs.'],
+    ['kitchen-sink','inside','Apron-front sink','The stainless apron-front sink beneath the kitchen window.'],
+    ['kitchen-to-rooms','inside','Kitchen to bath and bedroom','The kitchen looking toward the bath and bedroom doors, past a built-in niche.'],
+    ['bedroom','bed','Bedroom','The bedroom, with built-in cabinetry and open shelving.'],
+    ['bedroom-bed','bed','Bedroom','The bedroom, looking toward its closet doors.'],
     ['bedroom-closets','bed','Closets','The bedroom closets, behind period-style wood doors.'],
-    ['bath-vanity','bath','Vanity','The vanity in black stone with brass fixtures, beside the glass-enclosed shower.'],
-    ['bath-detail','bath','Vanity detail','The mirror and sconces above the black stone vanity.'],
-    ['bath-shower','bath','Bath','The bath, with its glass-enclosed subway-tiled shower and built-in cabinetry.']
+    ['bath','bath','Bath','The bath, with the vanity along one wall and the shower opposite.'],
+    ['bath-vanity','bath','Vanity','The vanity in black stone, with brass fixtures and a black-framed mirror.'],
+    ['bath-shower','bath','Shower','The glass-enclosed shower, in subway tile with a black border and a hex-tile floor.']
   ];
 
   /* A placeholder frame must never describe a photograph that does not exist,
