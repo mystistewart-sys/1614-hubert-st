@@ -28,8 +28,11 @@ for (const page of PAGES) {
 
   const before = readFileSync(file, 'utf8');
   // Match /assets/<css|js>/<name>.<css|js> with any existing ?v= stamp.
+  // Images are cached for a year as immutable. The hero and the social card
+  // keep their filenames when a photo set is replaced, so they are stamped
+  // too — otherwise a returning visitor gets the previous shoot's hero.
   const after = before.replace(
-    /(\/assets\/(?:css|js)\/[A-Za-z0-9._-]+\.(?:css|js))(\?v=[a-f0-9]+)?/g,
+    /(\/assets\/(?:css|js)\/[A-Za-z0-9._-]+\.(?:css|js)|\/assets\/img\/(?:hero\/[A-Za-z0-9._-]+|og-card)\.(?:jpg|webp))(\?v=[a-f0-9]+)?/g,
     (full, path) => {
       const onDisk = join(PUBLIC, path);
       if (!existsSync(onDisk)) {
@@ -44,7 +47,7 @@ for (const page of PAGES) {
     writeFileSync(file, after);
     changed++;
   }
-  for (const m of after.matchAll(/\/assets\/(?:css|js)\/([A-Za-z0-9._-]+)\?v=([a-f0-9]{8})/g))
+  for (const m of after.matchAll(/\/assets\/(?:css|js|img\/hero|img)\/([A-Za-z0-9._-]+)\?v=([a-f0-9]{8})/g))
     console.log(`  ${m[1].padEnd(16)} v=${m[2]}`);
 }
 console.log(`stamped ${changed} page(s)`);

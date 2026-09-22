@@ -207,9 +207,14 @@
 
   /* A placeholder frame must never describe a photograph that does not exist,
      so its alt text says what it is. */
+  /* Bumped by tools/photos.py on every photo run. Gallery images are cached
+     for a year and a replaced photo keeps its filename, so without this a
+     returning visitor sees the previous shoot from the new URL. */
+  var PHOTO_V = '4025a1b2';
+
   function photoSrc(slug, thumb) {
     if (PHOTOS_PENDING) return '/assets/img/gallery/placeholder/' + slug + '.svg';
-    return '/assets/img/gallery/' + slug + (thumb ? '-t' : '') + '.jpg';
+    return '/assets/img/gallery/' + slug + (thumb ? '-t' : '') + '.jpg?v=' + PHOTO_V;
   }
   function photoAlt(p) {
     return PHOTOS_PENDING
@@ -230,7 +235,7 @@
       var img = '<img src="' + photoSrc(p[0], true) + '" width="800" height="533" loading="' +
                 (i < 4 ? 'eager' : 'lazy') + '" decoding="async" alt="' + alt + '">';
       var media = PHOTOS_PENDING ? img
-        : '<picture><source type="image/webp" srcset="/assets/img/gallery/' + p[0] + '-t.webp">' + img + '</picture>';
+        : '<picture><source type="image/webp" srcset="/assets/img/gallery/' + p[0] + '-t.webp?v=' + PHOTO_V + '">' + img + '</picture>';
       return '<figure style="display:contents"><button class="gal__item" type="button" data-i="' + i + '" data-cat="' + p[1] + '" aria-label="Open photo ' + (i + 1) + ' of ' + PHOTOS.length + ': ' + alt + '">' +
         media +
         '<figcaption>' + p[2] + '</figcaption>' +

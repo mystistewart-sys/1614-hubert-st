@@ -27,7 +27,7 @@ Rules it enforces so the gallery cannot go out of sync with the page:
   * Images are never upscaled. A source narrower than the target keeps its
     own width, and the run reports it so you can ask for a better file.
 """
-import argparse, re, sys
+import argparse, hashlib, re, sys
 from pathlib import Path
 from PIL import Image, ImageOps
 
@@ -137,6 +137,18 @@ def main():
         card = ImageOps.fit(him, OG_SIZE, Image.LANCZOS, centering=(0.5, 0.45))
         write(card, ROOT / 'public/assets/img/og-card.jpg')
         print(f'  hero + og-card         {him.width}x{him.height}')
+
+    # A replaced photo keeps its filename, so a returning visitor's cache can
+    # serve the OLD image from the new URL — the classic "why is that photo
+    # still the wrong one" bug. Gallery URLs are built in JS, out of reach of
+    # tools/stamp-assets.mjs, so they carry a version query instead.
+    digest = hashlib.sha256()
+    for f in sorted(GALLERY.glob('*')) + sorted(HERO.glob('*')):
+        digest.update(f.name.encode())
+        digest.update(f.read_bytes())
+    version = digest.hexdigest()[:8]
+    print(f'\n  photo version: {version}')
+    print(f"  -> set PHOTO_V = '{version}' in public/assets/js/main.js")
 
     print(f'\n{len(pairs)} photo(s) written to {GALLERY.relative_to(ROOT)}')
     for note in upscaled:
